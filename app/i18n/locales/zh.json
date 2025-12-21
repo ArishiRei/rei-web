@@ -1,0 +1,60 @@
+{
+  "main": {
+    "title": "Arishi Rei's Blog",
+    "description": "一个基于 Nuxt 4 的项目脚手架，采用拆分上下文架构。"
+  },
+  "nav": {
+    "home": "首页",
+    "blog": "博客",
+    "demo": "演示",
+    "about": "关于",
+    "tailwind": "Tailwind"
+  },
+  "blog": {
+    "title": "博客文章",
+    "subtitle": "阅读我们最新的文章。",
+    "loading": "加载中...",
+    "error": "加载失败: {message}",
+    "read_more": "阅读更多",
+    "back": "返回博客"
+  },
+  "home": {
+    "title": "欢迎使用 Nuxt Scaffold",
+    "subtitle": "这是一个完整的 Nuxt 4 应用架构示例。",
+    "features": {
+      "layouts": "布局",
+      "layouts_desc": "使用包含头部和底部的默认布局。",
+      "pinia": "Pinia 状态管理",
+      "pinia_desc": "启用了持久化存储的状态管理。",
+      "server": "服务端 API",
+      "server_desc": "集成在 server/api 的服务端路由。"
+    },
+    "actions": {
+      "try_demo": "尝试演示",
+      "read_more": "了解更多"
+    }
+  },
+  "demo": {
+    "title": "交互演示",
+    "pinia_title": "Pinia Store (持久化)",
+    "value": "当前值",
+    "double": "双倍值",
+    "increment": "+ 增加",
+    "hint": "刷新页面，该值将会保留。",
+    "server_title": "服务端 API 获取",
+    "refresh": "刷新数据",
+    "custom_component": "自定义组件演示",
+    "custom_desc": "这是一个自动导入的组件示例。文件位于 app/components/custom/Card.vue，Nuxt 自动识别为 CustomCard 组件。",
+    "custom_footer": "这是 Footer 插槽"
+  },
+  "about": {
+    "title": "关于项目",
+    "intro": "本项目遵循 Nuxt 4 推荐的“拆分上下文”架构。",
+    "frontend": "前端",
+    "frontend_desc": "所有 Vue 文件位于 app/ 目录。",
+    "backend": "后端",
+    "backend_desc": "API 路由位于 server/ 目录。",
+    "config": "配置",
+    "config_desc": "根目录级别的配置。"
+  }
+}

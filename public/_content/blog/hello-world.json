@@ -1,0 +1,12 @@
+{
+  "title": "Hello World",
+  "date": "2025-12-06T00:00:00.000Z",
+  "description": "This is my first blog post using the custom file system mapper.",
+  "tags": [
+    "blog",
+    "hello",
+    "world",
+    "hello-world"
+  ],
+  "content": "\n# Hello World\n\nWelcome to my blog! This content is rendered from a markdown file located in `posts/blog/hello-world.md`."
+}

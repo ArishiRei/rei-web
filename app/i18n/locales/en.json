@@ -1,0 +1,60 @@
+{
+  "main": {
+    "title": "Arishi Rei's Blog",
+    "description": "A Nuxt 4 scaffold with split context architecture."
+  },
+  "nav": {
+    "home": "Home",
+    "blog": "Blog",
+    "demo": "Demo",
+    "about": "About",
+    "tailwind": "Tailwind"
+  },
+  "blog": {
+    "title": "Blog Posts",
+    "subtitle": "Read our latest articles from the file system.",
+    "loading": "Loading posts...",
+    "error": "Error loading posts: {message}",
+    "read_more": "Read More",
+    "back": "Back to Blog"
+  },
+  "home": {
+    "title": "Welcome to Nuxt Scaffold",
+    "subtitle": "This is a complete example of a Nuxt 4 application structure.",
+    "features": {
+      "layouts": "Layouts",
+      "layouts_desc": "Using default layout with Header and Footer.",
+      "pinia": "Pinia",
+      "pinia_desc": "State management with persistence enabled.",
+      "server": "Server API",
+      "server_desc": "Integrated server routes in server/api."
+    },
+    "actions": {
+      "try_demo": "Try Demo",
+      "read_more": "Read More"
+    }
+  },
+  "demo": {
+    "title": "Interactive Demo",
+    "pinia_title": "Pinia Store (Persisted)",
+    "value": "Value",
+    "double": "Double",
+    "increment": "+ Increment",
+    "hint": "Refresh the page, this value will persist.",
+    "server_title": "Server API Fetch",
+    "refresh": "Refresh Data",
+    "custom_component": "Custom Component Demo",
+    "custom_desc": "This is an auto-imported component example. Located at app/components/custom/Card.vue, recognized as CustomCard component.",
+    "custom_footer": "Footer Slot"
+  },
+  "about": {
+    "title": "About Project",
+    "intro": "This scaffold follows the \"Split Context\" architecture recommended for Nuxt 4.",
+    "frontend": "Frontend",
+    "frontend_desc": "All Vue files are in app/.",
+    "backend": "Backend",
+    "backend_desc": "API routes are in server/.",
+    "config": "Config",
+    "config_desc": "Root level configuration."
+  }
+}

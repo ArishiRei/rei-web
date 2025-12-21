@@ -1,0 +1,138 @@
+{
+  "prefix": "rei",
+  "routeBase": "/_content",
+  "sourceDir": "content",
+  "outputDir": "public/_content",
+  "generatedAt": "2025-12-21T14:18:38.532Z",
+  "treeUrlPath": "/_content/_rei_tree.json",
+  "tree": {
+    "type": "dir",
+    "name": "content",
+    "path": "",
+    "children": [
+      {
+        "type": "dir",
+        "name": "blog",
+        "path": "blog",
+        "children": [
+          {
+            "type": "md",
+            "name": "acg-mark.md",
+            "path": "blog/acg-mark.md",
+            "sourcePath": "content/blog/acg-mark.md",
+            "outputPath": "public/_content/blog/acg-mark.json",
+            "urlPath": "/_content/blog/acg-mark.json",
+            "meta": {
+              "title": "已追番",
+              "date": "2025-08-12T00:00:00.000Z",
+              "description": "已追番",
+              "tags": [
+                "my",
+                "like",
+                "acgn",
+                "acg"
+              ],
+              "cover": "/cover/acg-mark.jpg"
+            }
+          },
+          {
+            "type": "md",
+            "name": "git-mark.md",
+            "path": "blog/git-mark.md",
+            "sourcePath": "content/blog/git-mark.md",
+            "outputPath": "public/_content/blog/git-mark.json",
+            "urlPath": "/_content/blog/git-mark.json",
+            "meta": {
+              "title": "常用Git用法记录",
+              "date": "2025-08-09T00:00:00.000Z",
+              "description": "常用Git用法记录",
+              "tags": [
+                "git",
+                "github"
+              ]
+            }
+          },
+          {
+            "type": "md",
+            "name": "hello-world.md",
+            "path": "blog/hello-world.md",
+            "sourcePath": "content/blog/hello-world.md",
+            "outputPath": "public/_content/blog/hello-world.json",
+            "urlPath": "/_content/blog/hello-world.json",
+            "meta": {
+              "title": "Hello World",
+              "date": "2025-12-06T00:00:00.000Z",
+              "description": "This is my first blog post using the custom file system mapper.",
+              "tags": [
+                "blog",
+                "hello",
+                "world",
+                "hello-world"
+              ]
+            }
+          },
+          {
+            "type": "md",
+            "name": "shaqing.md",
+            "path": "blog/shaqing.md",
+            "sourcePath": "content/blog/shaqing.md",
+            "outputPath": "public/_content/blog/shaqing.json",
+            "urlPath": "/_content/blog/shaqing.json",
+            "meta": {
+              "title": "什么是杀青梗？",
+              "date": "2025-09-07T00:00:00.000Z",
+              "description": "随便记录一下",
+              "tags": [
+                "杀青",
+                "杀青梗"
+              ]
+            }
+          },
+          {
+            "type": "md",
+            "name": "srinivasa-ramanujan-mark.md",
+            "path": "blog/srinivasa-ramanujan-mark.md",
+            "sourcePath": "content/blog/srinivasa-ramanujan-mark.md",
+            "outputPath": "public/_content/blog/srinivasa-ramanujan-mark.json",
+            "urlPath": "/_content/blog/srinivasa-ramanujan-mark.json",
+            "meta": {
+              "title": "标记一下 \"Srinivasa-Ramanujan\"",
+              "date": "2025-08-09T00:00:00.000Z",
+              "description": "Srinivasa-Ramanujan",
+              "tags": [
+                "math",
+                "Srinivasa-Ramanujan"
+              ]
+            }
+          },
+          {
+            "type": "md",
+            "name": "vue-cli-install-args-mark.md",
+            "path": "blog/vue-cli-install-args-mark.md",
+            "sourcePath": "content/blog/vue-cli-install-args-mark.md",
+            "outputPath": "public/_content/blog/vue-cli-install-args-mark.json",
+            "urlPath": "/_content/blog/vue-cli-install-args-mark.json",
+            "meta": {
+              "title": "Vue指令安装时参数带-d与不带-d",
+              "date": "2025-09-12T00:00:00.000Z",
+              "description": "Vue指令安装时参数带-d与不带-d",
+              "tags": [
+                "vue",
+                "vue-cli",
+                "vue-cli-args"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "type": "file",
+        "name": "logo.png",
+        "path": "logo.png",
+        "sourcePath": "content/logo.png",
+        "outputPath": "public/_content/logo.png",
+        "urlPath": "/_content/logo.png"
+      }
+    ]
+  }
+}

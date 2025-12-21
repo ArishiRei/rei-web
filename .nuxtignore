@@ -1,0 +1,13 @@
+# ignore layout foo.vue
+# app/layouts/foo.vue
+# ignore layout files whose name ends with -ignore.vue
+# app/layouts/*-ignore.vue
+
+# ignore page bar.vue
+# app/pages/bar.vue
+# ignore page inside ignore folder
+# app/pages/ignore/*.vue
+
+# ignore route middleware files under foo folder except foo/bar.js
+# app/middleware/foo/*.js
+# !app/middleware/foo/bar.js
