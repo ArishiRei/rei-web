@@ -1,6 +1,5 @@
 import { generateContent, generateCSS, readEnvString, readEnvBool } from "./app/hooks";
 import { CONSTANTS_CONTENT_DEFAULTS, CONSTANTS_CONTENT_ENV_KEYS } from "./app/constants/content";
-import vuetify, { transformAssetUrls } from "vite-plugin-vuetify";
 
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
@@ -8,18 +7,12 @@ export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
 
-  build: {
-    transpile: ["vuetify"],
-  },
-
   vite: {
-    plugins: [
-      vuetify({ autoImport: true })
-    ],
-    // plugins: [vuetify({ autoImport: true }) as any],
     vue: {
       template: {
-        transformAssetUrls,
+        compilerOptions: {
+          isCustomElement: (tag: string) => tag.startsWith("md-"),
+        },
       },
     },
   },

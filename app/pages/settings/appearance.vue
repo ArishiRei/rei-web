@@ -1,9 +1,5 @@
 <template>
   <div>
-    <v-card>
-      <v-card-title>
-        <span>Appearance</span>
-      </v-card-title>
-    </v-card>
+    <span>Appearance</span>
   </div>
 </template>
