@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
+
 // 🌟 通用深度拷贝 deepClone
 export function deepClone<T>(value: T, cache = new WeakMap()): T {
   // 基本类型 & function
@@ -61,7 +64,6 @@ export function deepClone<T>(value: T, cache = new WeakMap()): T {
   cache.set(value, result);
 
   for (const key of Reflect.ownKeys(value)) {
-    // @ts-ignore
     result[key] = deepClone((value as any)[key], cache);
   }
 

@@ -2,23 +2,29 @@ export const headerConfig = {
   navbar: [
     {
       path: '/',
-      title: 'nav.home'
+      title: 'header.nav.home'
     },
     {
       path: '/blog',
-      title: 'nav.blog'
-    },
-    {
-      path: '/demo',
-      title: 'nav.demo'
+      title: 'header.nav.blog'
     },
     {
       path: '/about',
-      title: 'nav.about'
+      title: 'header.nav.about'
     },
     {
-      path: '/tailwind',
-      title: 'nav.tailwind'
+      path: '/settings',
+      title: 'header.nav.settings.title',
+      children: [
+        {
+          path: '/settings/appearance',
+          title: 'header.nav.settings.appearance'
+        },
+        {
+          path: '/settings/language',
+          title: 'header.nav.settings.language'
+        },
+      ]
     }
   ]
 }

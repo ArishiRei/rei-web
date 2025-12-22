@@ -25,3 +25,6 @@ logs
 
 docs/*
 .trae/*
+
+public/_content/*
+public/content/*

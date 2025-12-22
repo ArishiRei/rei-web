@@ -6,6 +6,6 @@
  */
 export function getHost() {
 	const nuxtApp = useNuxtApp();
-	const host: string = environment.server ? nuxtApp.ssrContext!.event.node.req.headers.host! : window.location.host;
+	const host: string = import.meta.server ? nuxtApp.ssrContext!.event.node.req.headers.host! : window.location.host;
 	return host;
 }

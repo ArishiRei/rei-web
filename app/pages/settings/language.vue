@@ -1,3 +1,9 @@
 <template>
-  d
+  <div>
+    <v-card>
+      <v-card-title>
+        <span>Language</span>
+      </v-card-title>
+    </v-card>
+  </div>
 </template>

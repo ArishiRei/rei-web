@@ -1,6 +1,7 @@
 import { promises as fs } from 'node:fs'
 import { join, dirname, extname, resolve, relative, isAbsolute } from 'node:path'
 import matter from 'gray-matter'
+import { CONSTANTS_CONTENT_DEFAULTS, CONSTANTS_CONTENT_TREE_FILE_SUFFIX } from '../constants/content'
 
 /**
  * Content 构建映射生成器
@@ -59,7 +60,7 @@ const sanitizePrefix = (prefix: string) => prefix.trim().replaceAll(/[^a-zA-Z0-9
  * - 不以 `/` 结尾（根路径除外）
  */
 const normalizeRouteBase = (routeBase: string) => {
-  const trimmed = routeBase.trim() || '/content'
+  const trimmed = routeBase.trim() || CONSTANTS_CONTENT_DEFAULTS.ROUTE_BASE
   const withSlash = trimmed.startsWith('/') ? trimmed : `/${trimmed}`
   if (withSlash !== '/' && withSlash.endsWith('/')) return withSlash.slice(0, -1)
   return withSlash
@@ -84,20 +85,22 @@ const toUrlPath = (routeBase: string, relPosixPath: string) => {
   return rel ? `${routeBase}/${rel}` : routeBase
 }
 
-const getTreePrefix = (env: NodeJS.ProcessEnv) => {
-  const prefixRaw = env.REI_PUBLIC_APP_PREFIX_NAME || env.REI_PUBLIC_APP_PREFIX_NAME || 'global'
-  return sanitizePrefix(prefixRaw) || 'global'
-}
-
-const getContentSourceDir = (env: NodeJS.ProcessEnv) => (env.REI_PUBLIC_APP_CONTENT_SOURCE_DIR || 'content').trim() || 'content'
-
-const getContentOutputDir = (env: NodeJS.ProcessEnv) => (env.REI_PUBLIC_APP_CONTENT_OUTPUT_DIR || 'public/content').trim() || 'public/content'
-
-const getContentRouteBase = (env: NodeJS.ProcessEnv) => normalizeRouteBase(env.REI_PUBLIC_APP_CONTENT_ROUTE_BASE || '/content')
-
-const getCleanOutput = (env: NodeJS.ProcessEnv) => {
-  const raw = (env.REI_PUBLIC_APP_CONTENT_CLEAN_OUTPUT || 'true').trim().toLowerCase()
-  return raw !== 'false' && raw !== '0'
+/**
+ * 生成 Content 内容时的配置选项
+ */
+export interface GenerateContentOptions {
+  /** 当前工作目录，默认为 process.cwd() */
+  cwd?: string
+  /** 索引树文件名前缀 */
+  prefix?: string
+  /** 内容源目录（相对于 cwd），默认为 'content' */
+  sourceDir?: string
+  /** 输出目录（相对于 cwd），默认为 'public/content' */
+  outputDir?: string
+  /** 路由前缀，用于生成 URL，默认为 '/content' */
+  routeBase?: string
+  /** 构建前是否清空输出目录，默认为 true */
+  cleanOutput?: boolean
 }
 
 const formatFrontmatterMeta = (data: Record<string, unknown> | undefined) => {
@@ -161,35 +164,31 @@ const normalizeDate = (date: unknown): string | undefined => {
  * - 索引树文件会被写入到 `outputDir` 目录下
  * - 索引树文件的 URL 路径为 `${routeBase}/${prefix}_tree.json`
  * 
- * env config:
- * - REI_PUBLIC_APP_PREFIX_NAME: 索引树文件名前缀（默认：'rei'）
- * - REI_PUBLIC_APP_CONTENT_SOURCE_DIR: 内容源目录（默认：'content'）
- * - REI_PUBLIC_APP_CONTENT_OUTPUT_DIR: 输出目录（默认：'public/content'）
- * - REI_PUBLIC_APP_CONTENT_ROUTE_BASE: 路由前缀（默认：'/content'）
+ * @param options - 配置选项
  */
-export async function generateContent() {
-  const cwd = process.cwd()
-  const sourceDir = getContentSourceDir(process.env)
-  const outputDir = getContentOutputDir(process.env)
-  const routeBase = getContentRouteBase(process.env)
-  const cleanOutput = getCleanOutput(process.env)
+export async function generateContent(options: GenerateContentOptions = {}) {
+  const cwd = options.cwd ?? process.cwd()
+  const sourceDir = (options.sourceDir ?? CONSTANTS_CONTENT_DEFAULTS.SOURCE_DIR).trim() || CONSTANTS_CONTENT_DEFAULTS.SOURCE_DIR
+  const outputDir = (options.outputDir ?? CONSTANTS_CONTENT_DEFAULTS.OUTPUT_DIR).trim() || CONSTANTS_CONTENT_DEFAULTS.OUTPUT_DIR
+  const routeBase = normalizeRouteBase(options.routeBase ?? CONSTANTS_CONTENT_DEFAULTS.ROUTE_BASE)
+  const cleanOutput = options.cleanOutput ?? CONSTANTS_CONTENT_DEFAULTS.CLEAN_OUTPUT
 
   const sourceRoot = resolveSafeProjectDir(cwd, sourceDir)
   const outputRoot = resolveSafeProjectDir(cwd, outputDir)
 
   const publicRoot = resolve(cwd, 'public')
   if (!isWithin(publicRoot, outputRoot)) {
-    throw new Error(`[gen-content] outputDir must be inside \'public\': ${outputDir}`)
+    throw new Error(`[gen-content] outputDir must be inside 'public': ${outputDir}`)
   }
   if (outputRoot === publicRoot) {
-    throw new Error(`[gen-content] outputDir must not be \'public\' root: ${outputDir}`)
+    throw new Error(`[gen-content] outputDir must not be 'public' root: ${outputDir}`)
   }
 
   if (cleanOutput) await rmDirIfExists(outputRoot)
   await ensureDir(outputRoot)
 
-  const prefix = getTreePrefix(process.env)
-  const treeFileName = `_${prefix}_tree.json`
+  const prefix = sanitizePrefix((options.prefix ?? CONSTANTS_CONTENT_DEFAULTS.PREFIX_NAME).trim()) || CONSTANTS_CONTENT_DEFAULTS.PREFIX_NAME
+  const treeFileName = `_${prefix}${CONSTANTS_CONTENT_TREE_FILE_SUFFIX}`
   const treeOutputPath = join(outputRoot, treeFileName)
 
   const sourceDirPosix = toPosixPath(sourceDir)
@@ -229,7 +228,7 @@ export async function generateContent() {
         const outRel = relPosixNormalized.replace(/\.md$/i, '.json')
         const outAbs = join(outputRoot, outRel)
 
-        const meta = formatFrontmatterMeta(parsed.data as any)
+        const meta = formatFrontmatterMeta(parsed.data)
 
         const json = {
           ...meta,
@@ -282,3 +281,53 @@ export async function generateContent() {
   await ensureParentDir(treeOutputPath)
   await fs.writeFile(treeOutputPath, JSON.stringify(index, null, 2), 'utf-8')
 }
+
+
+
+
+// utils
+
+/**
+ * 读取环境变量中的字符串值
+ * 
+ * @param env - 环境变量对象
+ * @param keys - 尝试读取的键名数组，优先级从左到右
+ * @param fallback - 如果未找到或值为空字符串时的默认值
+ * @returns 读取到的字符串值或默认值
+ */
+export function readEnvString(
+  env: NodeJS.ProcessEnv,
+  keys: readonly string[],
+  fallback: string
+) {
+  for (const key of keys) {
+    const value = env[key];
+    if (typeof value === "string" && value.trim()) return value.trim();
+  }
+  return fallback;
+}
+
+/**
+ * 读取环境变量中的布尔值
+ * 
+ * 支持的真值: "true", "1", "yes", "on" (不区分大小写)
+ * 支持的假值: "false", "0", "no", "off" (不区分大小写)
+ * 
+ * @param env - 环境变量对象
+ * @param keys - 尝试读取的键名数组，优先级从左到右
+ * @param fallback - 如果未找到或无法解析时的默认值
+ * @returns 读取到的布尔值或默认值
+ */
+export function readEnvBool (
+  env: NodeJS.ProcessEnv,
+  keys: readonly string[],
+  fallback: boolean
+) {
+  const raw = readEnvString(env, keys, "");
+  if (!raw) return fallback;
+
+  const v = raw.trim().toLowerCase();
+  if (["false", "0", "no", "off"].includes(v)) return false;
+  if (["true", "1", "yes", "on"].includes(v)) return true;
+  return fallback;
+};
