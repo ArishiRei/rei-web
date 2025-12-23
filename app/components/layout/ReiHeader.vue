@@ -87,11 +87,12 @@ const emit = defineEmits<{
 }
 
 /* Utilities placeholders (assuming global.css handles d-none etc, but adding here for safety) */
-@media (min-width: 768px) {
+@media (width >= 768px) {
   .d-md-none { display: none; }
   .d-md-flex { display: flex; }
 }
-@media (max-width: 767px) {
+
+@media (width <= 767px) {
   .d-none { display: none; }
 }
 </style>

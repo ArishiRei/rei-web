@@ -29,7 +29,7 @@
   gap: 16px;
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   .footer-content {
     flex-direction: row;
     justify-content: space-between;

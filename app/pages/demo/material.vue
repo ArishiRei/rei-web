@@ -97,7 +97,7 @@
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   background: white;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
 }
 
 .card-title {
