@@ -6,7 +6,7 @@
 3.  **代码即文档**: 通过清晰的命名、结构化的注释和类型定义，使代码具备自解释性。
 4.  **规范优先**: 严格遵守 ESLint 规则，保持代码风格统一。
 5.  **组件参考**: 必须优先查阅本地 `docs/_wiki/material-web` 文档，确保 Material Web 组件的正确使用。
-6.  **动态规范更新**: 每次开发任务结束后，若涉及项目架构、规范或约束的变更，必须同步更新本文件 (`docs/prompt.md`)。
+6.  **动态规范更新 (Self-Evolution)**: 每次任务结束前，必须**主动判断**当前变更是否引入了新的设计模式、架构调整或规范约束。若有，**必须立即重构**本文件 (`docs/prompt.md`)，保持规范与代码的实时同步。
 
 ---
 
@@ -85,8 +85,9 @@ shared/
 - **组件库**: 使用 `@material/web` 组件时，**必须查阅 `docs/_wiki/material-web`** 了解最新用法。
 - **组件封装 (Component Encapsulation)**:
   - **原则**: 页面开发中所需的通用 UI 组件，**必须**基于 `@material/web` 进行二次封装，禁止直接在业务页面中大量使用原生 `md-*` 组件。
-  - **命名规范**: 封装后的组件必须使用 `Rei` 前缀（如 `ReiButton`, `ReiTextField`），并在模板中使用 `rei-button`。
+  - **命名规范**: 封装后的组件必须使用 `Rei` 前缀（如 `ReiButton`, `ReiTextField`），并在模板中使用 `ReiButton` (PascalCase) 或 `rei-button` (kebab-case)。
   - **存放路径**: 基础 UI 组件存放在 `app/components/base/` 或 `app/components/ui/`。
+  - **路径前缀消除**: 已在 `nuxt.config.ts` 中配置 `pathPrefix: false`，因此使用组件时**不需要**包含目录前缀（即使用 `ReiButton` 而非 `BaseReiButton`）。
 - **结构顺序**:
   ```vue
   <script setup lang="ts">
@@ -135,9 +136,40 @@ shared/
 - **布局**: 优先使用全局 Utility 类 (如 `.d-flex`, `.gap-4`)，复杂布局在 `<style scoped>` 中实现。
 
 ### 3.6 错误处理 (Error Handling)
-- **抛出错误**: 使用 Nuxt 的 `createError({ statusCode, statusMessage })` 抛出应用级错误。
+- **抛出错误**: 使用 `throw createError({ statusCode, statusMessage })` 抛出应用级错误。
 - **显示错误**: 使用 `showError` 触发错误页面，或在 UI 组件中捕获并显示 Toast/Snackbar。
 - **边界处理**: 关键业务逻辑（如支付、登录）必须包含 Try-Catch 块。
+
+### 3.7 全局配置协作 (Global Config)
+- **配置中心**: 使用 `app/stores/config.ts` 中的 `useConfigs` Store 管理全局应用状态（如主题、语言、用户信息）。
+- **运行时配置**: 涉及构建时或服务端私有的配置，应通过 `nuxt.config.ts` 的 `runtimeConfig` 注入，并结合环境变量使用。
+
+### 3.8 路由与权限 (Routing & Auth)
+- **元数据**: 使用 `definePageMeta` 定义页面布局、中间件和过渡效果。
+  ```typescript
+  definePageMeta({
+    layout: 'custom',
+    middleware: ['auth'],
+    pageTransition: { name: 'fade' }
+  })
+  ```
+- **导航**: 使用 `<NuxtLink>` 组件进行页面跳转，优先使用命名路由。
+
+### 3.9 SEO 与元数据 (SEO & Meta)
+- **页面级 SEO**: 每个页面必须使用 `useHead` 或 `useSeoMeta` 定义标题、描述和 Open Graph 标签。
+- **标题模板**: 在 `app.vue` 或 `nuxt.config.ts` 中配置全局标题模板。
+
+### 3.10 基础设施复用 (Infrastructure Reuse)
+- **工具库**: 禁止重复造轮子，必须优先使用 `app/utils/` 下的现有工具函数。
+  - `deepclone.ts`: 深拷贝
+  - `device.ts`: 设备检测
+  - `environment.ts`: 环境判断
+- **静态配置**: 项目特定的静态配置（如站点信息、页头链接）必须维护在 `app/configs/*.ts` 中，禁止散落在组件内。
+- **构建钩子**: 复杂的构建时逻辑（如生成内容索引、CSS）应封装在 `app/hooks/` 中。
+
+### 3.11 内容管理 (Content Management)
+- **数据源**: 博客文章等静态内容必须存放在 `content/` 目录下。
+- **结构**: 遵循 Nuxt Content 的文件结构规范 (Markdown/JSON)。
 
 ---
 
@@ -224,4 +256,8 @@ export const calculatePrice = (price: number, discount: number): number => { ...
 - `main`: 生产分支，保持稳定。
 - `develop`: 开发分支。
 - `feature/*`: 功能分支。
-- `hotfix/*`: 紧急修复分支。
+## 8. 文档工作流 (Documentation Workflow)
+
+- **工具**: 使用项目内置的 `nikki0` CLI 进行文档管理。
+- **流程**: 任务完成后，必须遵循 `.trae/rules/project_rules.md` 中的规范，创建临时日志并归档。
+- **原则**: 保持文档与代码同步，重大变更必须更新 `docs/prompt.md`。

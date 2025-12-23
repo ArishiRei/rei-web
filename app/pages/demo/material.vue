@@ -20,39 +20,41 @@
             <p class="md-typescale-body-medium">Check out these controls!</p>
             
             <div class="d-flex align-center gap-4 mb-4">
-              <md-checkbox touch-target="wrapper" />
+              <ReiCheckbox />
               <label>Checkbox</label>
             </div>
 
             <div class="mb-4">
               <div class="d-flex align-center">
-                <md-radio name="group" value="1" touch-target="wrapper" />
+                <ReiRadio name="group" value="1" />
                 <label>Option 1</label>
               </div>
               <div class="d-flex align-center">
-                <md-radio name="group" value="2" touch-target="wrapper" checked />
+                <ReiRadio name="group" value="2" checked />
                 <label>Option 2</label>
               </div>
             </div>
 
             <div class="d-flex flex-column gap-4 mb-4" style="max-width: 300px">
-              <md-outlined-text-field 
+              <ReiTextField 
                 label="Favorite color" 
                 value="Purple"
+                variant="outlined"
               />
               
-              <md-filled-text-field 
+              <ReiTextField 
                 label="Email" 
                 type="email"
                 placeholder="example@email.com"
+                variant="filled"
               />
             </div>
 
             <div class="d-flex gap-4">
-              <md-outlined-button type="reset">Reset</md-outlined-button>
-              <md-filled-button>Submit</md-filled-button>
-              <md-elevated-button>Elevated</md-elevated-button>
-              <md-text-button>Text</md-text-button>
+              <ReiButton type="reset" variant="outlined">Reset</ReiButton>
+              <ReiButton variant="filled">Submit</ReiButton>
+              <ReiButton variant="elevated">Elevated</ReiButton>
+              <ReiButton variant="text">Text</ReiButton>
             </div>
           </form>
         </div>
@@ -61,25 +63,23 @@
       <div class="card pa-4">
         <h2 class="card-title md-typescale-title-large">Icons & FABs</h2>
         <div class="card-text d-flex gap-4 align-center flex-wrap">
-          <md-icon-button>
-            <md-icon>favorite</md-icon>
-          </md-icon-button>
+          <ReiIconButton>
+            <ReiIcon>favorite</ReiIcon>
+          </ReiIconButton>
           
-          <md-filled-icon-button>
-            <md-icon>settings</md-icon>
-          </md-filled-icon-button>
+          <ReiIconButton variant="filled">
+            <ReiIcon>settings</ReiIcon>
+          </ReiIconButton>
           
-          <!-- eslint-disable-next-line vue/no-deprecated-slot-attribute -->
-          <md-fab label="Add">
+          <ReiFab label="Add">
             <!-- eslint-disable-next-line vue/no-deprecated-slot-attribute -->
-            <md-icon slot="icon">add</md-icon>
-          </md-fab>
+            <ReiIcon slot="icon">add</ReiIcon>
+          </ReiFab>
 
-          <!-- eslint-disable-next-line vue/no-deprecated-slot-attribute -->
-          <md-fab variant="primary" label="Edit">
+          <ReiFab variant="primary" label="Edit">
             <!-- eslint-disable-next-line vue/no-deprecated-slot-attribute -->
-            <md-icon slot="icon">edit</md-icon>
-          </md-fab>
+            <ReiIcon slot="icon">edit</ReiIcon>
+          </ReiFab>
         </div>
       </div>
     </ClientOnly>

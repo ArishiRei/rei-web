@@ -72,6 +72,26 @@ export default defineNuxtConfig({
     dirs: ["types", "constants"],
   },
 
+  components: [
+    {
+      path: "components/base",
+      pathPrefix: false, // 禁用路径前缀，直接使用组件名 (e.g. ReiButton)
+    },
+    {
+      path: "components/domain",
+      pathPrefix: false,
+    },
+    {
+      path: "components/layout",
+      pathPrefix: false,
+    },
+    {
+      path: "components/ui",
+      pathPrefix: false,
+    },
+    "components", // 保留默认行为，处理其他组件
+  ],
+
   // modules
   modules: [
     "@pinia/nuxt",
