@@ -83,6 +83,10 @@ shared/
 ### 3.1 Vue 组件 (SFC)
 - **命名**: PascalCase (如 `UserProfile.vue`)。
 - **组件库**: 使用 `@material/web` 组件时，**必须查阅 `docs/_wiki/material-web`** 了解最新用法。
+- **组件封装 (Component Encapsulation)**:
+  - **原则**: 页面开发中所需的通用 UI 组件，**必须**基于 `@material/web` 进行二次封装，禁止直接在业务页面中大量使用原生 `md-*` 组件。
+  - **命名规范**: 封装后的组件必须使用 `Rei` 前缀（如 `ReiButton`, `ReiTextField`），并在模板中使用 `rei-button`。
+  - **存放路径**: 基础 UI 组件存放在 `app/components/base/` 或 `app/components/ui/`。
 - **结构顺序**:
   ```vue
   <script setup lang="ts">
@@ -110,15 +114,37 @@ shared/
 - **职责分离**: Store 仅管理状态变更，API 请求逻辑应封装在 `composables/` 或 `services/` 中。
 
 ### 3.3 异步数据 (Data Fetching)
-- **封装**: 禁止在组件中直接调用 `$fetch`。所有 API 调用需封装为 Composable (如 `useUserApi`)。
+- **统一封装**: 使用 `app/composables/useApi.ts` 进行 API 请求。
+  - 自动注入 Token。
+  - 统一处理 401/403/500 错误。
+  - 自动判断 Mock (内部 `/api`) 或 真实后端 (外部 `REI_PUBLIC_API_BASE`)。
+- **Mock 驱动开发**: 开发业务功能（如登录）时，**必须**同步在 `server/api/` 下实现对应的 Mock 接口。
+  - 接口逻辑应模拟真实后端的响应结构和错误码。
+  - 结合 `useApi` 实现透明切换：配置 `REI_PUBLIC_API_BASE` 时直连后端，为空时自动回退到本地 Mock。
 - **类型安全**: 必须定义 Request 和 Response 的 TypeScript 类型。
+
+### 3.4 国际化 (I18n)
+- **使用原则**: UI 文本禁止硬编码，必须使用 `$t()` 函数。
+- **Key 命名**: 模块.功能.语义 (e.g. `auth.login.submit_btn`)。
+- **文件管理**: 语言文件位于 `app/i18n/locales/`，按语言代码 (`en.json`, `zh.json`) 分文件存储。
+
+### 3.5 样式系统 (Styling)
+- **CSS Variables**: 禁止使用魔法数值（颜色、间距），必须使用 `app/assets/styles/theme.css` 定义的 Design Tokens。
+  - 颜色: `var(--md-sys-color-primary)`
+  - 字体: `var(--md-sys-typescale-body-medium)`
+- **布局**: 优先使用全局 Utility 类 (如 `.d-flex`, `.gap-4`)，复杂布局在 `<style scoped>` 中实现。
+
+### 3.6 错误处理 (Error Handling)
+- **抛出错误**: 使用 Nuxt 的 `createError({ statusCode, statusMessage })` 抛出应用级错误。
+- **显示错误**: 使用 `showError` 触发错误页面，或在 UI 组件中捕获并显示 Toast/Snackbar。
+- **边界处理**: 关键业务逻辑（如支付、登录）必须包含 Try-Catch 块。
 
 ---
 
 ## 4. 全局配置与常量 (Configuration & Constants)
 
 ### 4.1 环境变量 (.env)
-- **命名**: `NUXT_PUBLIC_XXX` (客户端可见), `NUXT_XXX` (服务端私有)。
+- **命名**: `REI_PUBLIC_XXX` (客户端可见), `REI_XXX` (服务端私有)。
 - **使用**:
   ```typescript
   const config = useRuntimeConfig();
@@ -170,5 +196,32 @@ export const calculatePrice = (price: number, discount: number): number => { ...
 ## 6. 规范规则 (Linting)
 
 - **ESLint**: 强制启用 `@nuxt/eslint`，任何 Lint 错误视为构建失败。
+- **强制 Lint 检查**: 每次重构或提交代码前，必须运行 `pnpm lint` 确保无错误。
 - **TypeScript**: 严禁使用 `any`，必须定义明确的接口或类型。
 - **Prettier**: 保持代码格式统一（2空格缩进，双引号，行尾分号）。
+
+---
+
+## 7. Git 提交规范 (Git Workflow)
+
+### 7.1 Commit Message 格式
+遵循 **Conventional Commits** 规范：
+`type(scope): subject`
+
+- **Type**:
+  - `feat`: 新功能
+  - `fix`: 修复 Bug
+  - `docs`: 文档变更
+  - `style`: 代码格式（不影响逻辑）
+  - `refactor`: 代码重构
+  - `perf`: 性能优化
+  - `test`: 测试相关
+  - `chore`: 构建/工具链变动
+- **Scope**: 影响范围 (e.g. `auth`, `ui`, `api`)
+- **Subject**: 简短描述 (中文/英文均可)
+
+### 7.2 分支管理
+- `main`: 生产分支，保持稳定。
+- `develop`: 开发分支。
+- `feature/*`: 功能分支。
+- `hotfix/*`: 紧急修复分支。

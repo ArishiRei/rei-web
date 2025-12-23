@@ -1,6 +1,10 @@
 import { generateContent, generateCSS, readEnvString, readEnvBool } from "./app/hooks";
 import { CONSTANTS_CONTENT_DEFAULTS, CONSTANTS_CONTENT_ENV_KEYS } from "./app/constants/content";
 
+/**
+ * @file nuxt.config.ts
+ * @description Nuxt 核心配置文件
+ */
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -94,6 +98,12 @@ export default defineNuxtConfig({
     langDir: "../app/i18n/locales",
     defaultLocale: "zh",
     strategy: "prefix_except_default", // /zh for Chinese, / for English
+  },
+
+  runtimeConfig: {
+    public: {
+      apiBase: process.env.REI_PUBLIC_API_BASE || "",
+    },
   },
 
   // dev server config

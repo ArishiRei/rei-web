@@ -1,3 +1,13 @@
+<script setup lang="ts">
+/**
+ * @file app/pages/demo/material.vue
+ * @description Material Web Components 演示页面
+ * @author ArishiRei
+ */
+
+// Note: Material Web Components are loaded via plugins/material-web.client.ts
+</script>
+
 <template>
   <div class="container">
     <h1 class="md-typescale-display-medium mb-6">Material Web Components Demo</h1>
@@ -75,10 +85,6 @@
     </ClientOnly>
   </div>
 </template>
-
-<script setup lang="ts">
-// Note: Material Web Components are loaded via plugins/material-web.client.ts
-</script>
 
 <style scoped>
 .container {

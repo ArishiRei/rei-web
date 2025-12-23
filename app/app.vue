@@ -8,6 +8,11 @@
 </template>
 
 <script setup lang="ts">
+/**
+ * @file app/app.vue
+ * @description 应用根组件
+ */
+
 // onMounted(() => {
 //   // 仅在客户端执行
 //   if (import.meta.client) {
