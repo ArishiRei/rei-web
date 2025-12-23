@@ -1,5 +1,9 @@
 # Nuxt 4 开发协议与规范 (Project Protocol)
 
+- Author: ArishiRei
+- Nuxt4 App Project Name: rei
+- Repository: `github.com/ArishiRei/rei-web`
+
 ## 1. 核心原则 (Core Principles)
 1.  **Split Context Architecture**: 严格遵循 Nuxt 4 的目录结构，将客户端 (`app/`)、服务端 (`server/`) 和共享逻辑 (`shared/`) 分离。
 2.  **单一数据源 (Single Source of Truth)**: 配置、常量和类型定义必须集中管理，禁止硬编码（Magic Strings/Numbers）。
@@ -171,6 +175,12 @@ shared/
 - **数据源**: 博客文章等静态内容必须存放在 `content/` 目录下。
 - **结构**: 遵循 Nuxt Content 的文件结构规范 (Markdown/JSON)。
 
+### 3.12 构建与部署 (Build & Deploy)
+- **构建检查**: 每次功能开发或重构结束后，必须运行 `pnpm build` **和** `pnpm generate` 验证构建是否成功。
+  - `pnpm build`: 验证 SSR/Server 构建，确保无类型错误。
+  - `pnpm generate`: 验证 SSG 静态生成，确保预渲染无误（本项目核心模式）。
+- **静态生成**: 本项目默认使用 SSG (Static Site Generation)，确保 `nuxt.config.ts` 中的 `generate` 配置正确。
+
 ---
 
 ## 4. 全局配置与常量 (Configuration & Constants)
@@ -261,3 +271,4 @@ export const calculatePrice = (price: number, discount: number): number => { ...
 - **工具**: 使用项目内置的 `nikki0` CLI 进行文档管理。
 - **流程**: 任务完成后，必须遵循 `.trae/rules/project_rules.md` 中的规范，创建临时日志并归档。
 - **原则**: 保持文档与代码同步，重大变更必须更新 `docs/prompt.md`。
+- **文档库**: 详细开发文档位于 `docs/` 目录下，包含 Guide, Architecture, Components, API 等子模块。新增功能或组件时，必须同步更新相应子文档。

@@ -7,6 +7,11 @@ KIRAKIRA 的前端架构复刻版 (Arishi Rei's Blog)
 
 **简体中文** | [English](README_en-US.md)
 
+> 📚 **文档库**: 详细开发文档请查阅 [docs/](./docs/README.md) 目录。
+> - [快速开始](./docs/guide/getting-started.md)
+> - [组件库指南](./docs/components/rei-components.md)
+> - [架构设计](./docs/architecture/tech-stack.md)
+
 ## 架构图
 
 ```mermaid
