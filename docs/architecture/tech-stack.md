@@ -2,7 +2,11 @@
 
 ## 技术栈
 - **Framework**: Nuxt 3 (Vue 3 + TypeScript)
-- **UI Library**: Material Web (Material Design 3 Web Components)
+- **UI Library**: Material Web (Material Design 3) + Heroicons (Icons)
+- **Rich Text**: TipTap (ProseMirror based)
+- **Validation**: Zod (Schema Validation)
+- **SEO**: @nuxtjs/seo (Sitemap, Robots, Schema)
+- **Linting**: ESLint + Stylelint
 - **State Management**: Pinia
 - **Styling**: CSS Variables (Design Tokens) + Utility Classes
 - **Docs**: Markdown + Nikki0 CLI

@@ -168,6 +168,10 @@ shared/
   - `deepclone.ts`: 深拷贝
   - `device.ts`: 设备检测
   - `environment.ts`: 环境判断
+  - `form.ts`: 基于 Zod 的表单验证
+- **全局 Hooks**:
+  - `useToast()`: 全局消息提示。
+  - `useDialog()`: 全局模态框/确认框。
 - **静态配置**: 项目特定的静态配置（如站点信息、页头链接）必须维护在 `app/configs/*.ts` 中，禁止散落在组件内。
 - **构建钩子**: 复杂的构建时逻辑（如生成内容索引、CSS）应封装在 `app/hooks/` 中。
 
@@ -240,6 +244,7 @@ export const calculatePrice = (price: number, discount: number): number => { ...
 
 - **ESLint**: 强制启用 `@nuxt/eslint`，任何 Lint 错误视为构建失败。
 - **强制 Lint 检查**: 每次重构或提交代码前，必须运行 `pnpm lint` 确保无错误。
+- **Stylelint**: 样式文件 (CSS/SCSS/Vue) 必须通过 `pnpm lint:style` 检查，遵循标准 CSS 属性顺序和规范。
 - **TypeScript**: 严禁使用 `any`，必须定义明确的接口或类型。
 - **Prettier**: 保持代码格式统一（2空格缩进，双引号，行尾分号）。
 
@@ -280,4 +285,6 @@ export const calculatePrice = (price: number, discount: number): number => { ...
 - **文档库**: 详细开发文档位于 `docs/` 目录下，包含 Guide, Architecture, Components, API 等子模块。新增功能或组件时，必须同步更新相应子文档。
   - **I18n**: 涉及国际化变更时，必读 `docs/guide/i18n.md`。
   - **Theming**: 涉及样式变更时，必读 `docs/guide/theming.md`。
+  - **Hooks**: 使用或新增全局 Hook 时，必读 `docs/guide/hooks.md`。
+  - **Validation**: 涉及表单验证时，必读 `docs/guide/validation.md`。
   - **Deployment**: 涉及构建部署时，必读 `docs/guide/deployment.md`。

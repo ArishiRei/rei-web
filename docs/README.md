@@ -7,6 +7,8 @@
 - **[快速开始 (Guide)](./guide/getting-started.md)**: 环境准备、安装与运行。
   - [国际化 (I18n)](./guide/i18n.md)
   - [主题与样式 (Theming)](./guide/theming.md)
+  - [全局 Hooks](./guide/hooks.md) (Toast, Dialog)
+  - [表单验证](./guide/validation.md) (Zod)
   - [部署指南 (Deployment)](./guide/deployment.md)
 - **[架构设计 (Architecture)](./architecture/tech-stack.md)**: 技术栈与设计理念。
   - [目录结构详解](./architecture/directory-structure.md)

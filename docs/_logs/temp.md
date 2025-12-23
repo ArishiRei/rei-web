@@ -1,26 +1,15 @@
-# 全面项目增强 (Infrastructure & Features)
-Date: 2025-12-22 23:30
+# 重构规范与文档库
+Date: 2025-12-22 23:45
 ## Actions
-1. **基础设施 (Infrastructure)**:
-   - 安装并配置 `stylelint` (Vue/SCSS 规范)。
-   - 安装并配置 `@nuxtjs/seo` (Sitemap, Robots, Schema)。
-2. **UI 增强 (UI)**:
-   - 安装 `@heroicons/vue`。
-   - 创建响应式布局 `layouts/default.vue`，包含 `ReiHeader`, `ReiFooter`, `ReiDrawer`。
-3. **全局 Hooks**:
-   - 实现 `useToast` (消息提示) 和 `useDialog` (模态框)。
-   - 在 `app.vue` 中挂载全局容器。
-4. **功能特性 (Features)**:
-   - 集成 TipTap 富文本编辑器，封装 `ReiEditor` 组件。
-   - 集成 Zod，创建 `app/utils/form.ts` 用于表单验证。
-
-## Dependencies Added
-- `stylelint`, `postcss-html`, `stylelint-config-*`
-- `@nuxtjs/seo`
-- `@heroicons/vue`
-- `@tiptap/vue-3`, `@tiptap/starter-kit`
-- `zod`
-
-## Next Steps
-- 在具体业务页面中使用新的 Layout 和 Hooks。
-- 完善 `ReiEditor` 的样式和功能（如图片上传）。
+1. **重构 `docs/prompt.md`**:
+   - **基础设施**: 新增 Stylelint, SEO, Zod, Heroicons 等技术栈说明。
+   - **规范**: 强制要求样式文件通过 Stylelint 检查。
+   - **Hooks**: 注册了 `useToast`, `useDialog` 等全局 Hooks。
+   - **复用**: 明确了 `app/utils/form.ts` 等新工具类的复用要求。
+2. **更新文档库**:
+   - `docs/architecture/tech-stack.md`: 同步更新技术栈列表。
+   - `docs/guide/hooks.md`: 新增全局 Hooks 使用指南。
+   - `docs/guide/validation.md`: 新增表单验证指南。
+   - `docs/README.md`: 更新文档索引。
+3. **目的**:
+   - 确保新引入的功能（TipTap, Zod, Hooks）有据可依，有文档可查，降低团队上手成本。
