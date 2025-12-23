@@ -10,7 +10,7 @@ const emit = defineEmits<{
   <header class="rei-header">
     <div class="header-container">
       <div class="left-section">
-        <ReiIconButton @click="emit('toggle-drawer')" class="d-md-none">
+        <ReiIconButton class="d-md-none" @click="emit('toggle-drawer')">
           <Bars3Icon class="icon-size" />
         </ReiIconButton>
         <NuxtLink to="/" class="logo">REI BLOG</NuxtLink>

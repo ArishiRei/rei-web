@@ -41,13 +41,13 @@ export const validate = <T>(schema: ZodSchema<T>, data: unknown): ValidationResu
  * @param initialData - 初始数据
  * @returns 表单状态和重置方法
  */
-export const useFormState = <T extends Record<string, any>>(initialData: T) => {
-  const form = reactive<T>({ ...initialData })
+export const useFormState = <T extends Record<string, unknown>>(initialData: T) => {
+  const form = reactive({ ...initialData }) as T
   const errors = ref<Record<string, string>>({})
 
   const reset = () => {
     Object.keys(form).forEach((key) => {
-      ;(form as any)[key] = initialData[key]
+      (form as Record<string, unknown>)[key] = initialData[key]
     })
     errors.value = {}
   }

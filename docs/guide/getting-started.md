@@ -18,22 +18,22 @@ pnpm dev
 ```
 访问 `http://localhost:3000` 查看应用。
 
-### 3. 构建与预览
-每次开发完成后，请运行以下命令验证构建：
+### 3. 构建、验证与提交 (DoD)
+每次开发任务结束前，必须完成以下闭环（Definition of Done）：
 
 ```bash
-# 构建 SSR/Server
-pnpm build
-
-# 构建 SSG (静态生成) - 本项目核心模式
-pnpm generate
-
-# 预览生成结果
-npx serve .output/public
-```
-
-## 代码规范检查
-提交代码前，请务必运行 Lint 检查：
-```bash
+# 1. 验证规范
 pnpm lint
+
+# 2. 验证构建 (SSR + SSG)
+pnpm build; pnpm generate
+
+# 3. 提交代码 (遵循 Conventional Commits)
+git add .; git commit -m "feat(scope): description"
+
+# 4. 记录日志 (nikki0)
+# 详见 docs/prompt.md 第 9 节
 ```
+
+## 代码规范
+本项目强制执行 ESLint 和 Stylelint 检查。

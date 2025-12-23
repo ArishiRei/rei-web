@@ -7,7 +7,7 @@ const isDrawerOpen = ref(false)
     <ReiHeader @toggle-drawer="isDrawerOpen = true">
       <template #actions>
         <!-- Global Actions Hook -->
-        <div id="header-actions"></div>
+        <div id="header-actions" />
       </template>
     </ReiHeader>
 
@@ -23,7 +23,7 @@ const isDrawerOpen = ref(false)
     <ReiFooter />
 
     <!-- Global Overlay Hooks -->
-    <div id="teleport-overlay"></div>
+    <div id="teleport-overlay" />
   </div>
 </template>
 

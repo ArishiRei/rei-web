@@ -50,7 +50,7 @@ onBeforeUnmount(() => {
         <ItalicIcon class="icon-size" />
       </ReiIconButton>
 
-      <div class="divider"></div>
+      <div class="divider" />
 
       <ReiIconButton
         variant="standard"

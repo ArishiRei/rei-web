@@ -180,14 +180,29 @@ shared/
 - **结构**: 遵循 Nuxt Content 的文件结构规范 (Markdown/JSON)。
 
 ### 3.12 构建与部署 (Build & Deploy)
-- **构建检查**: 每次功能开发或重构结束后，必须运行 `pnpm build` **和** `pnpm generate` 验证构建是否成功。
+- **构建检查**: 每次功能开发或重构结束后，必须运行 `pnpm lint`、`pnpm build` **和** `pnpm generate` 验证构建是否成功。
+  - `pnpm lint`: 验证代码风格 (ESLint + Stylelint)。
   - `pnpm build`: 验证 SSR/Server 构建，确保无类型错误。
   - `pnpm generate`: 验证 SSG 静态生成，确保预渲染无误（本项目核心模式）。
+- **环境兼容性**: 在 Windows PowerShell 环境下执行多条命令时，必须使用 `;` 而非 `&&` (例如: `pnpm lint; pnpm build`)。
 - **静态生成**: 本项目默认使用 SSG (Static Site Generation)，确保 `nuxt.config.ts` 中的 `generate` 配置正确。
 
 ---
 
-## 4. 全局配置与常量 (Configuration & Constants)
+## 4. 资源与静态资产 (Assets)
+
+### 4.1 图标 (Icons)
+- **统一使用**: 必须优先使用 `@heroicons/vue` (24/outline) 作为图标库。
+- **使用方式**: 直接导入组件使用，禁止使用原始 SVG 路径。
+- **规范**: 统一使用 `.icon-size` 类控制大小（通常为 20px 或 24px）。
+
+### 4.2 图片与媒体
+- **路径**: 静态资源存放在 `public/assets/`，代码引用资源存放在 `app/assets/`。
+- **优化**: 必须确保图片已压缩，大图建议使用 Nuxt Image (如果已安装)。
+
+---
+
+## 5. 全局配置与常量 (Configuration & Constants)
 
 ### 4.1 环境变量 (.env)
 - **命名**: `REI_PUBLIC_XXX` (客户端可见), `REI_XXX` (服务端私有)。
@@ -250,9 +265,9 @@ export const calculatePrice = (price: number, discount: number): number => { ...
 
 ---
 
-## 7. Git 提交规范 (Git Workflow)
+## 8. Git 提交规范 (Git Workflow)
 
-### 7.1 Commit Message 格式
+### 8.1 Commit Message 格式
 遵循 **Conventional Commits** 规范：
 `type(scope): subject`
 
@@ -268,23 +283,46 @@ export const calculatePrice = (price: number, discount: number): number => { ...
 - **Scope**: 影响范围 (e.g. `auth`, `ui`, `api`)
 - **Subject**: 简短描述 (中文/英文均可)
 
-### 7.2 分支管理
+### 8.2 分支管理
 - `main`: 生产分支，保持稳定。
 - `develop`: 开发分支。
 - `feature/*`: 功能分支。
 
-### 7.3 提交原则 (Commit Principles)
+### 8.3 提交原则 (Commit Principles)
 - **强制提交**: 每次完成一个完整的功能点、修复或重构任务后，**必须**执行 Git 提交，防止代码丢失。
 - **原子性**: 每个提交应只包含一个逻辑变更，禁止将无关的修改混入同一个提交。
-- **验证后提交**: 提交前必须确保 `pnpm lint` 和 `pnpm build` (如涉及核心变更) 通过。
-## 8. 文档工作流 (Documentation Workflow)
+- **验证后提交**: 提交前必须确保 `pnpm lint` 通过。
+- **命令行规范**: 在 Windows PowerShell 下使用 `;` 连接多个 Git 命令。
+  ```powershell
+  git add .; git commit -m "feat(ui): add new button component"
+  ```
 
-- **工具**: 使用项目内置的 `nikki0` CLI 进行文档管理。
-- **流程**: 任务完成后，必须遵循 `.trae/rules/project_rules.md` 中的规范，创建临时日志并归档。
-- **原则**: 保持文档与代码同步，重大变更必须更新 `docs/prompt.md`。
-- **文档库**: 详细开发文档位于 `docs/` 目录下，包含 Guide, Architecture, Components, API 等子模块。新增功能或组件时，必须同步更新相应子文档。
-  - **I18n**: 涉及国际化变更时，必读 `docs/guide/i18n.md`。
-  - **Theming**: 涉及样式变更时，必读 `docs/guide/theming.md`。
-  - **Hooks**: 使用或新增全局 Hook 时，必读 `docs/guide/hooks.md`。
-  - **Validation**: 涉及表单验证时，必读 `docs/guide/validation.md`。
-  - **Deployment**: 涉及构建部署时，必读 `docs/guide/deployment.md`。
+---
+
+## 9. 文档工作流 (Documentation Workflow)
+
+### 9.1 nikki0 日志闭环
+任务完成后，必须通过 `nikki0` 执行以下闭环（强制要求）：
+1.  **创建临时日志**: 在 `docs/_logs/temp.md` 中记录本次变更。
+2.  **归档日志**: 执行 `nikki0 add` 命令。
+    - **注意**: 分类目录 (`-c`) 严禁使用中文。
+    - **示例**: `nikki0 add -p "docs/_logs/temp.md" -c "feat/editor" --tags "tiptap,editor" --title "集成 TipTap 编辑器"`
+3.  **验证树结构**: 执行 `nikki0 tree` 确认日志已正确归档。
+
+### 9.2 文档同步
+- **原则**: 保持文档与代码同步。
+- **Wiki**: 涉及 Material Web 组件用法变更时，必须更新 `docs/_wiki/material-web/`。
+- **Guide**: 复杂功能（如 I18n, SEO, Hooks）必须在 `docs/guide/` 下有对应说明。
+
+---
+
+## 10. 任务完成定义 (Definition of Done - DoD)
+
+在宣布任务完成前，必须核对以下清单：
+- [ ] **代码规范**: 通过 `pnpm lint` (ESLint + Stylelint)。
+- [ ] **构建验证**: 通过 `pnpm build` 和 `pnpm generate` (SSG)。
+- [ ] **类型安全**: 移除所有 `any`，TS 类型定义完整。
+- [ ] **Git 归档**: 已按照 Conventional Commits 规范执行 `git commit`。
+- [ ] **文档记录**: 已通过 `nikki0` 归档开发日志，并更新了相关的 Wiki/Guide。
+- [ ] **规范演进**: 若引入了新模式，已同步更新本文件 (`docs/prompt.md`)。
+

@@ -6,8 +6,17 @@
 
 适用于 GitHub Pages, Vercel, Netlify 等静态托管服务。
 
-### 构建命令
+### 构建与验证流程 (强制)
+在正式部署前，必须依次运行以下命令验证代码质量与构建状态：
+
 ```bash
+# 1. 验证代码规范 (ESLint + Stylelint)
+pnpm lint
+
+# 2. 验证 SSR 构建 (确保无 TS 错误)
+pnpm build
+
+# 3. 验证 SSG 静态生成 (核心部署模式)
 pnpm generate
 ```
 
