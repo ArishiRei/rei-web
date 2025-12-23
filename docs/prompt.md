@@ -267,6 +267,11 @@ export const calculatePrice = (price: number, discount: number): number => { ...
 - `main`: 生产分支，保持稳定。
 - `develop`: 开发分支。
 - `feature/*`: 功能分支。
+
+### 7.3 提交原则 (Commit Principles)
+- **强制提交**: 每次完成一个完整的功能点、修复或重构任务后，**必须**执行 Git 提交，防止代码丢失。
+- **原子性**: 每个提交应只包含一个逻辑变更，禁止将无关的修改混入同一个提交。
+- **验证后提交**: 提交前必须确保 `pnpm lint` 和 `pnpm build` (如涉及核心变更) 通过。
 ## 8. 文档工作流 (Documentation Workflow)
 
 - **工具**: 使用项目内置的 `nikki0` CLI 进行文档管理。
