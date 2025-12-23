@@ -98,7 +98,15 @@ export default defineNuxtConfig({
     "pinia-plugin-persistedstate/nuxt",
     "@nuxtjs/i18n",
     "@nuxt/eslint",
+    "@nuxtjs/seo",
   ],
+
+  site: {
+    url: process.env.REI_PUBLIC_APP_URL || "http://localhost:3000",
+    name: "Rei Nuxt Scaffold",
+    description: "A Nuxt 4 scaffold with Material Design 3",
+    defaultLocale: "zh",
+  },
 
   eslint: {
     config: {

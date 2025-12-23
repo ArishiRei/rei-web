@@ -3,7 +3,7 @@
 ![Tag][tag-shield]
 [![LICENSE-MIT][license-shield]][license-url]
 
-KIRAKIRA 的前端架构复刻版 (Arishi Rei's Blog)
+Arishi Rei's Blog
 
 **简体中文** | [English](README_en-US.md)
 
