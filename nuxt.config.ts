@@ -133,6 +133,4 @@ export default defineNuxtConfig({
       : 3000,
     host: process.env.REI_PUBLIC_APP_ADDR || "localhost",
   },
-
-  spaLoadingTemplate: false, // 禁用默认 SPA loading，使用 app.html 中的自定义内容
 });

@@ -39,8 +39,8 @@ node .output/server/index.mjs
 
 在生产环境中，请确保配置以下环境变量：
 
-- `NUXT_PUBLIC_API_BASE`: 后端 API 地址 (e.g. `https://api.example.com`)
-- `NUXT_APP_BASE_URL`: 应用基础路径 (如果部署在子目录下)
+- `REI_PUBLIC_API_BASE`: 后端 API 地址 (e.g. `https://api.example.com`)
+- `REI_APP_BASE_URL`: 应用基础路径 (如果部署在子目录下)
 
 ## 预览
 

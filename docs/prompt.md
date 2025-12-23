@@ -196,6 +196,7 @@ shared/
 
 ### 4.2 常量管理
 - **禁止魔法值**: 所有硬编码字符串/数字必须提取为常量。
+- **命名规范**: 导出的常量对象或变量必须使用 `CONSTANTS_` 前缀 (e.g. `CONSTANTS_API_ROUTES`, `CONSTANTS_APP_CONFIG`)。
 - **分类**:
   - `shared/constants/`: 前后端共享 (如 `UserRole`, `ApiRoutes`)。
   - `app/constants/`: 仅前端使用 (如 `UIConfig`, `ValidationRules`)。
