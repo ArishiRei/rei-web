@@ -1,3 +1,16 @@
+---
+id: 65fff7b9-1a9b-a5b7-1a2f-dda93b378eef
+title: 项目文档库完善
+category: architecture/docs
+tags:
+    - documentation
+    - guide
+    - structure
+created_at: 2025-12-23T15:28:46.7643204+08:00
+updated_at: 2025-12-23T15:28:46.7643204+08:00
+---
+
+## File: docs/_logs/temp.md
 # 项目文档库完善
 Date: 2025-12-22 22:15
 ## Actions

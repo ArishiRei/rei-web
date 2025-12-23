@@ -1,5 +1,53 @@
 [
   {
+    "id": "99131fa8-6018-21e3-1d94-979f389e594a",
+    "category": "architecture/standard",
+    "title": "Nuxt 4 开发规范与目录结构设计",
+    "tags": [
+      "nuxt4",
+      "standard",
+      "architecture"
+    ],
+    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\standard\\99131fa8-6018-21e3-1d94-979f389e594a.md",
+    "created_at": "2025-12-23T13:18:11+08:00"
+  },
+  {
+    "id": "bb20acc8-37f3-5792-8de8-385cb5930016",
+    "category": "feature/api",
+    "title": "API 层与 Mock 策略实现",
+    "tags": [
+      "api",
+      "mock",
+      "composable"
+    ],
+    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\feature\\api\\bb20acc8-37f3-5792-8de8-385cb5930016.md",
+    "created_at": "2025-12-23T14:01:13+08:00"
+  },
+  {
+    "id": "5e7c770f-b31c-3019-d3e6-872d49f1530d",
+    "category": "architecture/standard",
+    "title": "制定开发规范 docs/prompt.md",
+    "tags": [
+      "protocol",
+      "prompt",
+      "rules"
+    ],
+    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\standard\\5e7c770f-b31c-3019-d3e6-872d49f1530d.md",
+    "created_at": "2025-12-23T13:35:21+08:00"
+  },
+  {
+    "id": "e45f8305-fa78-0d6a-534b-f910aa2c0f1b",
+    "category": "architecture/config",
+    "title": "组件自动导入配置与规范更新",
+    "tags": [
+      "nuxt",
+      "components",
+      "config"
+    ],
+    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\config\\e45f8305-fa78-0d6a-534b-f910aa2c0f1b.md",
+    "created_at": "2025-12-23T14:39:03+08:00"
+  },
+  {
     "id": "f411f616-f0b3-f2d2-d342-15c59ee802ad",
     "category": "architecture/standard",
     "title": "完善开发规范约束",
@@ -10,6 +58,53 @@
     ],
     "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\standard\\f411f616-f0b3-f2d2-d342-15c59ee802ad.md",
     "created_at": "2025-12-23T13:46:35+08:00"
+  },
+  {
+    "id": "19aa9c12-16e1-eef6-9578-cd9cbf3eaf68",
+    "category": "architecture/refactor",
+    "title": "代码重构与规范对齐",
+    "tags": [
+      "refactor",
+      "standards",
+      "comments"
+    ],
+    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\refactor\\19aa9c12-16e1-eef6-9578-cd9cbf3eaf68.md",
+    "created_at": "2025-12-23T14:06:37+08:00"
+  },
+  {
+    "id": "30efed50-dda6-7912-7c55-1fc02f7442cf",
+    "category": "architecture/standard",
+    "title": "强化基础设施复用与协作规范",
+    "tags": [
+      "infrastructure",
+      "utils",
+      "docs"
+    ],
+    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\standard\\30efed50-dda6-7912-7c55-1fc02f7442cf.md",
+    "created_at": "2025-12-23T14:50:37+08:00"
+  },
+  {
+    "id": "1bf70efa-9e77-596e-8306-f7c251a107d3",
+    "category": "frontend/style",
+    "title": "新增样式系统",
+    "tags": [
+      "css",
+      "design-tokens"
+    ],
+    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\frontend\\style\\1bf70efa-9e77-596e-8306-f7c251a107d3.md",
+    "created_at": "2025-12-23T02:30:32+08:00"
+  },
+  {
+    "id": "49bd725f-6704-439f-6a17-d1a0d6c779ec",
+    "category": "architecture/standard",
+    "title": "强化规范自进化机制",
+    "tags": [
+      "prompt",
+      "self-evolution",
+      "meta"
+    ],
+    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\standard\\49bd725f-6704-439f-6a17-d1a0d6c779ec.md",
+    "created_at": "2025-12-23T14:53:57+08:00"
   },
   {
     "id": "01925880-17c9-a770-0f63-748ae68f847e",
@@ -61,28 +156,28 @@
     "created_at": "2025-12-23T14:43:54+08:00"
   },
   {
-    "id": "19aa9c12-16e1-eef6-9578-cd9cbf3eaf68",
-    "category": "architecture/refactor",
-    "title": "代码重构与规范对齐",
+    "id": "bae5a6c8-060b-41ee-ced2-13fd020c5d84",
+    "category": "architecture/standard",
+    "title": "完善构建验证规范",
     "tags": [
-      "refactor",
-      "standards",
-      "comments"
+      "build",
+      "ssg",
+      "prompt"
     ],
-    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\refactor\\19aa9c12-16e1-eef6-9578-cd9cbf3eaf68.md",
-    "created_at": "2025-12-23T14:06:37+08:00"
+    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\standard\\bae5a6c8-060b-41ee-ced2-13fd020c5d84.md",
+    "created_at": "2025-12-23T15:05:40+08:00"
   },
   {
-    "id": "30efed50-dda6-7912-7c55-1fc02f7442cf",
-    "category": "architecture/standard",
-    "title": "强化基础设施复用与协作规范",
+    "id": "d730b8fd-10ea-3233-c70e-4d93c66ecbbe",
+    "category": "architecture/docs",
+    "title": "项目文档库建设",
     "tags": [
-      "infrastructure",
-      "utils",
-      "docs"
+      "documentation",
+      "guide",
+      "api"
     ],
-    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\standard\\30efed50-dda6-7912-7c55-1fc02f7442cf.md",
-    "created_at": "2025-12-23T14:50:37+08:00"
+    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\docs\\d730b8fd-10ea-3233-c70e-4d93c66ecbbe.md",
+    "created_at": "2025-12-23T15:23:11+08:00"
   },
   {
     "id": "565b3334-df0e-e81f-f950-f8b7d2fead12",
@@ -109,18 +204,6 @@
     "created_at": "2025-12-23T14:34:23+08:00"
   },
   {
-    "id": "99131fa8-6018-21e3-1d94-979f389e594a",
-    "category": "architecture/standard",
-    "title": "Nuxt 4 开发规范与目录结构设计",
-    "tags": [
-      "nuxt4",
-      "standard",
-      "architecture"
-    ],
-    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\standard\\99131fa8-6018-21e3-1d94-979f389e594a.md",
-    "created_at": "2025-12-23T13:18:11+08:00"
-  },
-  {
     "id": "a09a8ba4-923b-6ee8-ded9-458ab746f522",
     "category": "architecture/config",
     "title": "环境变量规范化",
@@ -133,89 +216,6 @@
     "created_at": "2025-12-23T14:10:02+08:00"
   },
   {
-    "id": "1bf70efa-9e77-596e-8306-f7c251a107d3",
-    "category": "frontend/style",
-    "title": "新增样式系统",
-    "tags": [
-      "css",
-      "design-tokens"
-    ],
-    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\frontend\\style\\1bf70efa-9e77-596e-8306-f7c251a107d3.md",
-    "created_at": "2025-12-23T02:30:32+08:00"
-  },
-  {
-    "id": "bb20acc8-37f3-5792-8de8-385cb5930016",
-    "category": "feature/api",
-    "title": "API 层与 Mock 策略实现",
-    "tags": [
-      "api",
-      "mock",
-      "composable"
-    ],
-    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\feature\\api\\bb20acc8-37f3-5792-8de8-385cb5930016.md",
-    "created_at": "2025-12-23T14:01:13+08:00"
-  },
-  {
-    "id": "5e7c770f-b31c-3019-d3e6-872d49f1530d",
-    "category": "architecture/standard",
-    "title": "制定开发规范 docs/prompt.md",
-    "tags": [
-      "protocol",
-      "prompt",
-      "rules"
-    ],
-    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\standard\\5e7c770f-b31c-3019-d3e6-872d49f1530d.md",
-    "created_at": "2025-12-23T13:35:21+08:00"
-  },
-  {
-    "id": "bae5a6c8-060b-41ee-ced2-13fd020c5d84",
-    "category": "architecture/standard",
-    "title": "完善构建验证规范",
-    "tags": [
-      "build",
-      "ssg",
-      "prompt"
-    ],
-    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\standard\\bae5a6c8-060b-41ee-ced2-13fd020c5d84.md",
-    "created_at": "2025-12-23T15:05:40+08:00"
-  },
-  {
-    "id": "e45f8305-fa78-0d6a-534b-f910aa2c0f1b",
-    "category": "architecture/config",
-    "title": "组件自动导入配置与规范更新",
-    "tags": [
-      "nuxt",
-      "components",
-      "config"
-    ],
-    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\config\\e45f8305-fa78-0d6a-534b-f910aa2c0f1b.md",
-    "created_at": "2025-12-23T14:39:03+08:00"
-  },
-  {
-    "id": "d730b8fd-10ea-3233-c70e-4d93c66ecbbe",
-    "category": "architecture/docs",
-    "title": "项目文档库建设",
-    "tags": [
-      "documentation",
-      "guide",
-      "api"
-    ],
-    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\docs\\d730b8fd-10ea-3233-c70e-4d93c66ecbbe.md",
-    "created_at": "2025-12-23T15:23:11+08:00"
-  },
-  {
-    "id": "49bd725f-6704-439f-6a17-d1a0d6c779ec",
-    "category": "architecture/standard",
-    "title": "强化规范自进化机制",
-    "tags": [
-      "prompt",
-      "self-evolution",
-      "meta"
-    ],
-    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\standard\\49bd725f-6704-439f-6a17-d1a0d6c779ec.md",
-    "created_at": "2025-12-23T14:53:57+08:00"
-  },
-  {
     "id": "d82eda09-7fb9-8aa0-4692-01d204db5f26",
     "category": "architecture/standard",
     "title": "组件封装与 Mock 规范强化",
@@ -226,5 +226,17 @@
     ],
     "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\standard\\d82eda09-7fb9-8aa0-4692-01d204db5f26.md",
     "created_at": "2025-12-23T14:23:29+08:00"
+  },
+  {
+    "id": "65fff7b9-1a9b-a5b7-1a2f-dda93b378eef",
+    "category": "architecture/docs",
+    "title": "项目文档库完善",
+    "tags": [
+      "documentation",
+      "guide",
+      "structure"
+    ],
+    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\docs\\65fff7b9-1a9b-a5b7-1a2f-dda93b378eef.md",
+    "created_at": "2025-12-23T15:28:46+08:00"
   }
 ]

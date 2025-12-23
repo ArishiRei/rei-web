@@ -272,3 +272,6 @@ export const calculatePrice = (price: number, discount: number): number => { ...
 - **流程**: 任务完成后，必须遵循 `.trae/rules/project_rules.md` 中的规范，创建临时日志并归档。
 - **原则**: 保持文档与代码同步，重大变更必须更新 `docs/prompt.md`。
 - **文档库**: 详细开发文档位于 `docs/` 目录下，包含 Guide, Architecture, Components, API 等子模块。新增功能或组件时，必须同步更新相应子文档。
+  - **I18n**: 涉及国际化变更时，必读 `docs/guide/i18n.md`。
+  - **Theming**: 涉及样式变更时，必读 `docs/guide/theming.md`。
+  - **Deployment**: 涉及构建部署时，必读 `docs/guide/deployment.md`。
