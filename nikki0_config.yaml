@@ -1,0 +1,7 @@
+abpath: "D:/coder/web/blog/test/docs/_logs"
+tree_filename: "nikki_tree.json"
+queue: 10
+print_mode: "console"
+print_filename: ""
+timezone: "UTC"
+date_format: "2006-01-02 15:04:05"

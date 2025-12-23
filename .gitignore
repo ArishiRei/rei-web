@@ -23,8 +23,9 @@ logs
 .env.*
 !.env.example
 
-docs/*
-.trae/*
+# .trae/*
 
 public/_content/*
 public/content/*
+
+docs/init_*.md

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rei Nuxt Scaffold</title>
+  <style>
+    /* 初始 Loading 样式 */
+    #app-loading {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.3s ease;
+    }
+    
+    .loading-spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid #f3f3f3;
+      border-top: 3px solid #3498db;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Nuxt 挂载容器默认隐藏 */
+    #layout {
+      display: none;
+    }
+
+    /* 当 body 包含 mounted 类时（Nuxt 挂载后），显示内容并隐藏 loading */
+    body.mounted #layout {
+      display: block;
+    }
+    body.mounted #app-loading {
+      opacity: 0;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- 初始 Loading 元素 -->
+  <div id="app-loading">
+    <div class="loading-spinner">sss</div>
+  </div>
+
+  <!-- Nuxt 应用挂载点 -->
+  <div id="layout">
+    {{ APP }}
+  </div>
+</body>
+</html>

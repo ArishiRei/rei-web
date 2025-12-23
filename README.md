@@ -17,7 +17,9 @@ flowchart TD
     %% 表现层
     subgraph "表现层"
         Pages["页面和路由"]:::presentation
-        UIComponents["界面组件"]:::presentation
+        UIComponents["界面组件 (Material Web)"]:::presentation
+        Loading["全屏加载 (App Shell)"]:::presentation
+        Styles["样式系统 (CSS Variables)"]:::presentation
     end
 
     %% 业务逻辑层
@@ -47,12 +49,14 @@ flowchart TD
     %% Connections between layers
     NuxtApp -->|"路由"| Pages
     NuxtApp -->|"渲染"| UIComponents
+    NuxtApp -->|"预加载"| Loading
     Modules -->|"影响"| NuxtApp
     PluginsProviders -->|"中间件"| NuxtApp
     ComposablesStores -->|"获取接口"| Backend
     PluginsProviders -->|"读取"| FileSystem
     UIComponents -->|"指令绑定"| PluginsProviders
     AssetsStyling -->|"妆饰"| UIComponents
+    Styles -->|"主题变量"| UIComponents
     Internationalization -->|"翻译"| UIComponents
     ComposablesStores -->|"状态同步"| UIComponents
     Modules -->|"扩展"| PluginsProviders
@@ -68,7 +72,7 @@ flowchart TD
 ```
 
 > [!NOTE] **[架构说明]**
-> 当前项目架构基于 Nuxt 4 推荐结构，集成了 Pinia 持久化、Vuetify 组件库、I18n 国际化以及基于文件系统的 Content 生成机制。
+> 当前项目架构基于 Nuxt 4 推荐结构，集成了 Pinia 持久化、Google Material Web Components、I18n 国际化、基于文件系统的 Content 生成机制以及全屏 Loading 策略。样式系统采用 CSS Variables 实现主题定制。
 
 ## Nuxt
 
@@ -187,11 +191,14 @@ pnpm lint
 ### 水波纹
 
 > [!NOTE] **[部分支持]**
-> 当前项目使用了 Vuetify，Vuetify 提供了 `v-ripple` 指令。
-> 用法与模板描述基本一致。
+> 当前项目使用了 Material Web Components (`@material/web`)，其组件（如 `<md-ripple>`) 自带水波纹效果，但未封装为全局 `v-ripple` 指令。
+> **迁移计划**：如果需要对普通 HTML 元素添加水波纹，可封装 `v-ripple` 指令调用 `md-ripple`。
 
 ```html
-<div v-ripple></div>
+<div style="position: relative">
+  <md-ripple></md-ripple>
+  Click me
+</div>
 ```
 
 ### [未来扩展] 依次动画优先级 (v-i)
@@ -202,9 +209,9 @@ pnpm lint
 
 ### [未来扩展] 工具提示 (v-tooltip)
 
-> [!NOTE] **[部分支持]**
-> Vuetify 提供了 `v-tooltip` 指令/组件，但语法可能与模板不同。
-> **迁移计划**：封装自定义指令以匹配模板语法 `v-tooltip="'text'"`，或直接使用 Vuetify 原生语法。
+> [!NOTE] **[未来扩展]**
+> 当前项目建议使用 Material Web 的 Popover API 或相关组件，尚未实现全局 `v-tooltip` 指令。
+> **迁移计划**：封装自定义指令或使用第三方库实现 Tooltip。
 
 ### 本地化
 
@@ -245,9 +252,9 @@ pnpm lint
 
 ### [未来扩展] 与样式相关的组件 Prop
 
-> [!NOTE] **[未来扩展]**
-> 当前项目组件样式主要依赖 Vuetify Props 或标准 CSS 类。
-> **迁移计划**：引入 CSS Variables (`--wrapper-size`) 驱动的样式系统，使组件支持通过 CSS 自定义属性控制内部布局。
+> [!NOTE] **[部分支持]**
+> 当前项目已引入 `app/assets/styles/theme.css` 定义 Material Design 3 风格的 Design Tokens。
+> **迁移计划**：继续完善 `global.css` 中的实用类，并根据需要扩展组件级 CSS 变量。
 
 ## IDE
 
@@ -264,7 +271,7 @@ pnpm lint
 [![Vite](https://img.shields.io/badge/-Vite-646CFF?style=flat-square&logo=vite&logoColor=white)](https://vitejs.dev/)
 [![Pinia](https://img.shields.io/badge/-Pinia-FFDD5F?style=flat-square&logo=vitest&logoColor=black)](https://pinia.vuejs.org/)
 [![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Vuetify](https://img.shields.io/badge/-Vuetify-1867C0?style=flat-square&logo=vuetify&logoColor=white)](https://vuetifyjs.com/)
+[![Material Web](https://img.shields.io/badge/-Material%20Web-000000?style=flat-square&logo=material-design&logoColor=white)](https://github.com/material-components/material-web)
 [![ESLint](https://img.shields.io/badge/-ESLint-4B32C3?style=flat-square&logo=eslint&logoColor=white)](https://eslint.org/)
 [![pnpm](https://img.shields.io/badge/-pnpm-F69220?style=flat-square&logo=pnpm&logoColor=white)](https://www.npmjs.com/)
 

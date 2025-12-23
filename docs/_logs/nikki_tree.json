@@ -1,0 +1,72 @@
+[
+  {
+    "id": "99131fa8-6018-21e3-1d94-979f389e594a",
+    "category": "architecture/standard",
+    "title": "Nuxt 4 开发规范与目录结构设计",
+    "tags": [
+      "nuxt4",
+      "standard",
+      "architecture"
+    ],
+    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\standard\\99131fa8-6018-21e3-1d94-979f389e594a.md",
+    "created_at": "2025-12-23T13:18:11+08:00"
+  },
+  {
+    "id": "2a0a94c3-e61b-7c5d-9325-d1c82396ca1c",
+    "category": "architecture/refactor",
+    "title": "目录结构重构与规范化",
+    "tags": [
+      "refactor",
+      "structure"
+    ],
+    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\refactor\\2a0a94c3-e61b-7c5d-9325-d1c82396ca1c.md",
+    "created_at": "2025-12-23T13:25:41+08:00"
+  },
+  {
+    "id": "f411f616-f0b3-f2d2-d342-15c59ee802ad",
+    "category": "architecture/standard",
+    "title": "完善开发规范约束",
+    "tags": [
+      "protocol",
+      "prompt",
+      "constraint"
+    ],
+    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\standard\\f411f616-f0b3-f2d2-d342-15c59ee802ad.md",
+    "created_at": "2025-12-23T13:46:35+08:00"
+  },
+  {
+    "id": "5e7c770f-b31c-3019-d3e6-872d49f1530d",
+    "category": "architecture/standard",
+    "title": "制定开发规范 docs/prompt.md",
+    "tags": [
+      "protocol",
+      "prompt",
+      "rules"
+    ],
+    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\standard\\5e7c770f-b31c-3019-d3e6-872d49f1530d.md",
+    "created_at": "2025-12-23T13:35:21+08:00"
+  },
+  {
+    "id": "20b32f6c-ac78-c078-f425-af47575a7708",
+    "category": "architecture/standard",
+    "title": "更新开发规范 docs/prompt.md",
+    "tags": [
+      "protocol",
+      "prompt",
+      "material-web"
+    ],
+    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\standard\\20b32f6c-ac78-c078-f425-af47575a7708.md",
+    "created_at": "2025-12-23T13:38:46+08:00"
+  },
+  {
+    "id": "1bf70efa-9e77-596e-8306-f7c251a107d3",
+    "category": "frontend/style",
+    "title": "新增样式系统",
+    "tags": [
+      "css",
+      "design-tokens"
+    ],
+    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\frontend\\style\\1bf70efa-9e77-596e-8306-f7c251a107d3.md",
+    "created_at": "2025-12-23T02:30:32+08:00"
+  }
+]
