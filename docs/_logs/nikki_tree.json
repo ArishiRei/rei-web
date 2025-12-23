@@ -1,89 +1,5 @@
 [
   {
-    "id": "a09a8ba4-923b-6ee8-ded9-458ab746f522",
-    "category": "architecture/config",
-    "title": "环境变量规范化",
-    "tags": [
-      "env",
-      "refactor",
-      "standardization"
-    ],
-    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\config\\a09a8ba4-923b-6ee8-ded9-458ab746f522.md",
-    "created_at": "2025-12-23T14:10:02+08:00"
-  },
-  {
-    "id": "a1dfdf90-b748-ae61-da7e-047499579938",
-    "category": "feat/enhancement",
-    "title": "全面项目增强",
-    "tags": [
-      "infrastructure",
-      "ui",
-      "feature"
-    ],
-    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\feat\\enhancement\\a1dfdf90-b748-ae61-da7e-047499579938.md",
-    "created_at": "2025-12-23T16:24:29+08:00"
-  },
-  {
-    "id": "30efed50-dda6-7912-7c55-1fc02f7442cf",
-    "category": "architecture/standard",
-    "title": "强化基础设施复用与协作规范",
-    "tags": [
-      "infrastructure",
-      "utils",
-      "docs"
-    ],
-    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\standard\\30efed50-dda6-7912-7c55-1fc02f7442cf.md",
-    "created_at": "2025-12-23T14:50:37+08:00"
-  },
-  {
-    "id": "19aa9c12-16e1-eef6-9578-cd9cbf3eaf68",
-    "category": "architecture/refactor",
-    "title": "代码重构与规范对齐",
-    "tags": [
-      "refactor",
-      "standards",
-      "comments"
-    ],
-    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\refactor\\19aa9c12-16e1-eef6-9578-cd9cbf3eaf68.md",
-    "created_at": "2025-12-23T14:06:37+08:00"
-  },
-  {
-    "id": "20b32f6c-ac78-c078-f425-af47575a7708",
-    "category": "architecture/standard",
-    "title": "更新开发规范 docs/prompt.md",
-    "tags": [
-      "protocol",
-      "prompt",
-      "material-web"
-    ],
-    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\standard\\20b32f6c-ac78-c078-f425-af47575a7708.md",
-    "created_at": "2025-12-23T13:38:46+08:00"
-  },
-  {
-    "id": "5e7c770f-b31c-3019-d3e6-872d49f1530d",
-    "category": "architecture/standard",
-    "title": "制定开发规范 docs/prompt.md",
-    "tags": [
-      "protocol",
-      "prompt",
-      "rules"
-    ],
-    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\standard\\5e7c770f-b31c-3019-d3e6-872d49f1530d.md",
-    "created_at": "2025-12-23T13:35:21+08:00"
-  },
-  {
-    "id": "bae5a6c8-060b-41ee-ced2-13fd020c5d84",
-    "category": "architecture/standard",
-    "title": "完善构建验证规范",
-    "tags": [
-      "build",
-      "ssg",
-      "prompt"
-    ],
-    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\standard\\bae5a6c8-060b-41ee-ced2-13fd020c5d84.md",
-    "created_at": "2025-12-23T15:05:40+08:00"
-  },
-  {
     "id": "87a50647-270a-d9a1-b7e7-c2531b9fc954",
     "category": "architecture/config",
     "title": "移除 SPA Loading 自定义配置",
@@ -107,41 +23,53 @@
     "created_at": "2025-12-23T02:30:32+08:00"
   },
   {
-    "id": "d2b8ec85-5b1f-47ab-45b7-0bbf665a247b",
+    "id": "1958abe5-8d64-8c71-092a-3ff95ad3346b",
     "category": "architecture/standard",
-    "title": "强制 Git 提交规范",
+    "title": "开发流程与协作规范补充",
     "tags": [
-      "git",
-      "workflow",
+      "config",
+      "routing",
+      "seo",
+      "workflow"
+    ],
+    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\standard\\1958abe5-8d64-8c71-092a-3ff95ad3346b.md",
+    "created_at": "2025-12-23T14:43:54+08:00"
+  },
+  {
+    "id": "bb20acc8-37f3-5792-8de8-385cb5930016",
+    "category": "feature/api",
+    "title": "API 层与 Mock 策略实现",
+    "tags": [
+      "api",
+      "mock",
+      "composable"
+    ],
+    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\feature\\api\\bb20acc8-37f3-5792-8de8-385cb5930016.md",
+    "created_at": "2025-12-23T14:01:13+08:00"
+  },
+  {
+    "id": "1a5d180d-0888-978c-b69f-d89f56e0c2e1",
+    "category": "architecture/standard",
+    "title": "规范常量命名",
+    "tags": [
+      "naming",
+      "constants",
       "prompt"
     ],
-    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\standard\\d2b8ec85-5b1f-47ab-45b7-0bbf665a247b.md",
-    "created_at": "2025-12-23T15:55:20+08:00"
+    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\standard\\1a5d180d-0888-978c-b69f-d89f56e0c2e1.md",
+    "created_at": "2025-12-23T15:48:12+08:00"
   },
   {
-    "id": "99131fa8-6018-21e3-1d94-979f389e594a",
-    "category": "architecture/standard",
-    "title": "Nuxt 4 开发规范与目录结构设计",
+    "id": "19aa9c12-16e1-eef6-9578-cd9cbf3eaf68",
+    "category": "architecture/refactor",
+    "title": "代码重构与规范对齐",
     "tags": [
-      "nuxt4",
-      "standard",
-      "architecture"
+      "refactor",
+      "standards",
+      "comments"
     ],
-    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\standard\\99131fa8-6018-21e3-1d94-979f389e594a.md",
-    "created_at": "2025-12-23T13:18:11+08:00"
-  },
-  {
-    "id": "0fd27f0a-9cde-33ef-e480-8f9f9b246974",
-    "category": "protocol/refactor",
-    "title": "重构项目规范与验证构建流程",
-    "tags": [
-      "lint",
-      "build",
-      "generate",
-      "protocol"
-    ],
-    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\protocol\\refactor\\0fd27f0a-9cde-33ef-e480-8f9f9b246974.md",
-    "created_at": "2025-12-23T16:41:11+08:00"
+    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\refactor\\19aa9c12-16e1-eef6-9578-cd9cbf3eaf68.md",
+    "created_at": "2025-12-23T14:06:37+08:00"
   },
   {
     "id": "e45f8305-fa78-0d6a-534b-f910aa2c0f1b",
@@ -156,17 +84,186 @@
     "created_at": "2025-12-23T14:39:03+08:00"
   },
   {
-    "id": "1958abe5-8d64-8c71-092a-3ff95ad3346b",
-    "category": "architecture/standard",
-    "title": "开发流程与协作规范补充",
+    "id": "052713cb-03b3-e0a5-6345-dc00112d5dd9",
+    "category": "architecture/refactor",
+    "title": "组件封装与项目修正",
     "tags": [
-      "config",
-      "routing",
-      "seo",
-      "workflow"
+      "component",
+      "refactor",
+      "material-web"
     ],
-    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\standard\\1958abe5-8d64-8c71-092a-3ff95ad3346b.md",
-    "created_at": "2025-12-23T14:43:54+08:00"
+    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\refactor\\052713cb-03b3-e0a5-6345-dc00112d5dd9.md",
+    "created_at": "2025-12-23T14:34:23+08:00"
+  },
+  {
+    "id": "65fff7b9-1a9b-a5b7-1a2f-dda93b378eef",
+    "category": "architecture/docs",
+    "title": "项目文档库完善",
+    "tags": [
+      "documentation",
+      "guide",
+      "structure"
+    ],
+    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\docs\\65fff7b9-1a9b-a5b7-1a2f-dda93b378eef.md",
+    "created_at": "2025-12-23T15:28:46+08:00"
+  },
+  {
+    "id": "565b3334-df0e-e81f-f950-f8b7d2fead12",
+    "category": "architecture/standard",
+    "title": "构建验证规范",
+    "tags": [
+      "build",
+      "ci",
+      "prompt"
+    ],
+    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\standard\\565b3334-df0e-e81f-f950-f8b7d2fead12.md",
+    "created_at": "2025-12-23T15:03:31+08:00"
+  },
+  {
+    "id": "49bd725f-6704-439f-6a17-d1a0d6c779ec",
+    "category": "architecture/standard",
+    "title": "强化规范自进化机制",
+    "tags": [
+      "prompt",
+      "self-evolution",
+      "meta"
+    ],
+    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\standard\\49bd725f-6704-439f-6a17-d1a0d6c779ec.md",
+    "created_at": "2025-12-23T14:53:57+08:00"
+  },
+  {
+    "id": "a1dfdf90-b748-ae61-da7e-047499579938",
+    "category": "feat/enhancement",
+    "title": "全面项目增强",
+    "tags": [
+      "infrastructure",
+      "ui",
+      "feature"
+    ],
+    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\feat\\enhancement\\a1dfdf90-b748-ae61-da7e-047499579938.md",
+    "created_at": "2025-12-23T16:24:29+08:00"
+  },
+  {
+    "id": "99131fa8-6018-21e3-1d94-979f389e594a",
+    "category": "architecture/standard",
+    "title": "Nuxt 4 开发规范与目录结构设计",
+    "tags": [
+      "nuxt4",
+      "standard",
+      "architecture"
+    ],
+    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\standard\\99131fa8-6018-21e3-1d94-979f389e594a.md",
+    "created_at": "2025-12-23T13:18:11+08:00"
+  },
+  {
+    "id": "b0a751b4-1c9c-57aa-a9f7-c5d8f9300d28",
+    "category": "chore/git",
+    "title": "Git 提交与代码归档",
+    "tags": [
+      "git",
+      "commit"
+    ],
+    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\chore\\git\\b0a751b4-1c9c-57aa-a9f7-c5d8f9300d28.md",
+    "created_at": "2025-12-23T15:53:06+08:00"
+  },
+  {
+    "id": "d82eda09-7fb9-8aa0-4692-01d204db5f26",
+    "category": "architecture/standard",
+    "title": "组件封装与 Mock 规范强化",
+    "tags": [
+      "component",
+      "encapsulation",
+      "prompt"
+    ],
+    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\standard\\d82eda09-7fb9-8aa0-4692-01d204db5f26.md",
+    "created_at": "2025-12-23T14:23:29+08:00"
+  },
+  {
+    "id": "d730b8fd-10ea-3233-c70e-4d93c66ecbbe",
+    "category": "architecture/docs",
+    "title": "项目文档库建设",
+    "tags": [
+      "documentation",
+      "guide",
+      "api"
+    ],
+    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\docs\\d730b8fd-10ea-3233-c70e-4d93c66ecbbe.md",
+    "created_at": "2025-12-23T15:23:11+08:00"
+  },
+  {
+    "id": "01925880-17c9-a770-0f63-748ae68f847e",
+    "category": "architecture/standard",
+    "title": "完善开发规范体系",
+    "tags": [
+      "i18n",
+      "styling",
+      "git",
+      "error-handling"
+    ],
+    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\standard\\01925880-17c9-a770-0f63-748ae68f847e.md",
+    "created_at": "2025-12-23T14:26:04+08:00"
+  },
+  {
+    "id": "557b7896-ae09-b184-9b29-84c1972f5ab3",
+    "category": "protocol/standardization",
+    "title": "完善项目开发协议与全流程约束",
+    "tags": [
+      "protocol",
+      "git",
+      "nikki",
+      "dod"
+    ],
+    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\protocol\\standardization\\557b7896-ae09-b184-9b29-84c1972f5ab3.md",
+    "created_at": "2025-12-23T16:45:41+08:00"
+  },
+  {
+    "id": "30efed50-dda6-7912-7c55-1fc02f7442cf",
+    "category": "architecture/standard",
+    "title": "强化基础设施复用与协作规范",
+    "tags": [
+      "infrastructure",
+      "utils",
+      "docs"
+    ],
+    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\standard\\30efed50-dda6-7912-7c55-1fc02f7442cf.md",
+    "created_at": "2025-12-23T14:50:37+08:00"
+  },
+  {
+    "id": "5e7c770f-b31c-3019-d3e6-872d49f1530d",
+    "category": "architecture/standard",
+    "title": "制定开发规范 docs/prompt.md",
+    "tags": [
+      "protocol",
+      "prompt",
+      "rules"
+    ],
+    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\standard\\5e7c770f-b31c-3019-d3e6-872d49f1530d.md",
+    "created_at": "2025-12-23T13:35:21+08:00"
+  },
+  {
+    "id": "d2b8ec85-5b1f-47ab-45b7-0bbf665a247b",
+    "category": "architecture/standard",
+    "title": "强制 Git 提交规范",
+    "tags": [
+      "git",
+      "workflow",
+      "prompt"
+    ],
+    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\standard\\d2b8ec85-5b1f-47ab-45b7-0bbf665a247b.md",
+    "created_at": "2025-12-23T15:55:20+08:00"
+  },
+  {
+    "id": "0fd27f0a-9cde-33ef-e480-8f9f9b246974",
+    "category": "protocol/refactor",
+    "title": "重构项目规范与验证构建流程",
+    "tags": [
+      "lint",
+      "build",
+      "generate",
+      "protocol"
+    ],
+    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\protocol\\refactor\\0fd27f0a-9cde-33ef-e480-8f9f9b246974.md",
+    "created_at": "2025-12-23T16:41:11+08:00"
   },
   {
     "id": "2a0a94c3-e61b-7c5d-9325-d1c82396ca1c",
@@ -204,123 +301,39 @@
     "created_at": "2025-12-23T16:29:22+08:00"
   },
   {
-    "id": "b0a751b4-1c9c-57aa-a9f7-c5d8f9300d28",
-    "category": "chore/git",
-    "title": "Git 提交与代码归档",
+    "id": "a09a8ba4-923b-6ee8-ded9-458ab746f522",
+    "category": "architecture/config",
+    "title": "环境变量规范化",
     "tags": [
-      "git",
-      "commit"
-    ],
-    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\chore\\git\\b0a751b4-1c9c-57aa-a9f7-c5d8f9300d28.md",
-    "created_at": "2025-12-23T15:53:06+08:00"
-  },
-  {
-    "id": "bb20acc8-37f3-5792-8de8-385cb5930016",
-    "category": "feature/api",
-    "title": "API 层与 Mock 策略实现",
-    "tags": [
-      "api",
-      "mock",
-      "composable"
-    ],
-    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\feature\\api\\bb20acc8-37f3-5792-8de8-385cb5930016.md",
-    "created_at": "2025-12-23T14:01:13+08:00"
-  },
-  {
-    "id": "d82eda09-7fb9-8aa0-4692-01d204db5f26",
-    "category": "architecture/standard",
-    "title": "组件封装与 Mock 规范强化",
-    "tags": [
-      "component",
-      "encapsulation",
-      "prompt"
-    ],
-    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\standard\\d82eda09-7fb9-8aa0-4692-01d204db5f26.md",
-    "created_at": "2025-12-23T14:23:29+08:00"
-  },
-  {
-    "id": "d730b8fd-10ea-3233-c70e-4d93c66ecbbe",
-    "category": "architecture/docs",
-    "title": "项目文档库建设",
-    "tags": [
-      "documentation",
-      "guide",
-      "api"
-    ],
-    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\docs\\d730b8fd-10ea-3233-c70e-4d93c66ecbbe.md",
-    "created_at": "2025-12-23T15:23:11+08:00"
-  },
-  {
-    "id": "1a5d180d-0888-978c-b69f-d89f56e0c2e1",
-    "category": "architecture/standard",
-    "title": "规范常量命名",
-    "tags": [
-      "naming",
-      "constants",
-      "prompt"
-    ],
-    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\standard\\1a5d180d-0888-978c-b69f-d89f56e0c2e1.md",
-    "created_at": "2025-12-23T15:48:12+08:00"
-  },
-  {
-    "id": "052713cb-03b3-e0a5-6345-dc00112d5dd9",
-    "category": "architecture/refactor",
-    "title": "组件封装与项目修正",
-    "tags": [
-      "component",
+      "env",
       "refactor",
+      "standardization"
+    ],
+    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\config\\a09a8ba4-923b-6ee8-ded9-458ab746f522.md",
+    "created_at": "2025-12-23T14:10:02+08:00"
+  },
+  {
+    "id": "20b32f6c-ac78-c078-f425-af47575a7708",
+    "category": "architecture/standard",
+    "title": "更新开发规范 docs/prompt.md",
+    "tags": [
+      "protocol",
+      "prompt",
       "material-web"
     ],
-    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\refactor\\052713cb-03b3-e0a5-6345-dc00112d5dd9.md",
-    "created_at": "2025-12-23T14:34:23+08:00"
+    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\standard\\20b32f6c-ac78-c078-f425-af47575a7708.md",
+    "created_at": "2025-12-23T13:38:46+08:00"
   },
   {
-    "id": "65fff7b9-1a9b-a5b7-1a2f-dda93b378eef",
-    "category": "architecture/docs",
-    "title": "项目文档库完善",
-    "tags": [
-      "documentation",
-      "guide",
-      "structure"
-    ],
-    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\docs\\65fff7b9-1a9b-a5b7-1a2f-dda93b378eef.md",
-    "created_at": "2025-12-23T15:28:46+08:00"
-  },
-  {
-    "id": "01925880-17c9-a770-0f63-748ae68f847e",
+    "id": "bae5a6c8-060b-41ee-ced2-13fd020c5d84",
     "category": "architecture/standard",
-    "title": "完善开发规范体系",
-    "tags": [
-      "i18n",
-      "styling",
-      "git",
-      "error-handling"
-    ],
-    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\standard\\01925880-17c9-a770-0f63-748ae68f847e.md",
-    "created_at": "2025-12-23T14:26:04+08:00"
-  },
-  {
-    "id": "565b3334-df0e-e81f-f950-f8b7d2fead12",
-    "category": "architecture/standard",
-    "title": "构建验证规范",
+    "title": "完善构建验证规范",
     "tags": [
       "build",
-      "ci",
+      "ssg",
       "prompt"
     ],
-    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\standard\\565b3334-df0e-e81f-f950-f8b7d2fead12.md",
-    "created_at": "2025-12-23T15:03:31+08:00"
-  },
-  {
-    "id": "49bd725f-6704-439f-6a17-d1a0d6c779ec",
-    "category": "architecture/standard",
-    "title": "强化规范自进化机制",
-    "tags": [
-      "prompt",
-      "self-evolution",
-      "meta"
-    ],
-    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\standard\\49bd725f-6704-439f-6a17-d1a0d6c779ec.md",
-    "created_at": "2025-12-23T14:53:57+08:00"
+    "path": "D:\\coder\\web\\blog\\test\\docs\\_logs\\notes\\architecture\\standard\\bae5a6c8-060b-41ee-ced2-13fd020c5d84.md",
+    "created_at": "2025-12-23T15:05:40+08:00"
   }
 ]

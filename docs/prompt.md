@@ -257,11 +257,10 @@ export const calculatePrice = (price: number, discount: number): number => { ...
 
 ## 6. 规范规则 (Linting)
 
-- **ESLint**: 强制启用 `@nuxt/eslint`，任何 Lint 错误视为构建失败。
-- **强制 Lint 检查**: 每次重构或提交代码前，必须运行 `pnpm lint` 确保无错误。
-- **Stylelint**: 样式文件 (CSS/SCSS/Vue) 必须通过 `pnpm lint:style` 检查，遵循标准 CSS 属性顺序和规范。
+- **ESLint (强制)**: 所有代码必须符合 **`eslint`** 规范，任何 Lint 错误视为构建失败。
+- **Prettier (建议)**: 建议使用 **`prettier`** 格式化代码，保持代码风格统一（2空格缩进，双引号，行尾分号）。
+- **Stylelint (强制)**: 样式文件 (CSS/SCSS/Vue) 必须通过 `pnpm lint:style` 检查，遵循标准 CSS 属性顺序和规范。
 - **TypeScript**: 严禁使用 `any`，必须定义明确的接口或类型。
-- **Prettier**: 保持代码格式统一（2空格缩进，双引号，行尾分号）。
 
 ---
 
