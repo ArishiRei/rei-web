@@ -30,3 +30,5 @@ public/content/*
 
 docs/init_*.md
 docs/README_copy.md
+
+.kiro/*

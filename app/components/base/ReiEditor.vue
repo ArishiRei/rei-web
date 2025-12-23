@@ -22,7 +22,7 @@ const editor = useEditor({
 // Update content if modelValue changes externally
 watch(() => props.modelValue, (newValue) => {
   if (editor.value && newValue !== editor.value.getHTML()) {
-    editor.value.commands.setContent(newValue, false)
+    editor.value.commands.setContent(newValue)
   }
 })
 

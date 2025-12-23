@@ -1,4 +1,5 @@
 import type { UseFetchOptions } from 'nuxt/app';
+import { defu } from 'defu';
 
 /**
  * 统一 API 请求 Composable

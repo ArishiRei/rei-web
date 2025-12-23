@@ -27,7 +27,7 @@ export const useDialogStore = defineStore('dialog', () => {
     const index = dialogs.value.findIndex((d) => d.id === id)
     if (index !== -1) {
       const dialog = dialogs.value[index]
-      dialog.resolve(result)
+      dialog?.resolve(result)
       dialogs.value.splice(index, 1)
     }
   }

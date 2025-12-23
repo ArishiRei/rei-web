@@ -1,4 +1,4 @@
-import { type ZodSchema, ZodError } from 'zod'
+import { type ZodSchema, ZodError, type ZodIssue } from 'zod'
 
 export interface ValidationResult<T> {
   success: boolean
@@ -23,7 +23,7 @@ export const validate = <T>(schema: ZodSchema<T>, data: unknown): ValidationResu
   } catch (error) {
     if (error instanceof ZodError) {
       const errors: Record<string, string> = {}
-      error.errors.forEach((err) => {
+      error.issues.forEach((err: ZodIssue) => {
         const path = err.path.join('.')
         errors[path] = err.message
       })
