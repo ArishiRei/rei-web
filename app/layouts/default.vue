@@ -14,6 +14,7 @@ const isDrawerOpen = ref(false)
     <ReiDrawer v-model="isDrawerOpen">
       <NuxtLink to="/" class="drawer-link" @click="isDrawerOpen = false">Home</NuxtLink>
       <NuxtLink to="/demo/material" class="drawer-link" @click="isDrawerOpen = false">Demo</NuxtLink>
+      <NuxtLink to="/blog" class="drawer-link" @click="isDrawerOpen = false">Blog</NuxtLink>
     </ReiDrawer>
 
     <main class="main-content">

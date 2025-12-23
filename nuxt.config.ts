@@ -1,4 +1,5 @@
 import { generateContent, generateCSS, readEnvString, readEnvBool } from "./app/hooks";
+import { discoverBlogRoutes } from "./app/hooks/gen-blog-routes";
 import { CONSTANTS_CONTENT_DEFAULTS, CONSTANTS_CONTENT_ENV_KEYS } from "./app/constants/content";
 
 /**
@@ -66,6 +67,29 @@ export default defineNuxtConfig({
       });
       await generateCSS(); // 生成自定义css
     },
+    "nitro:config": async (nitroConfig) => {
+      // Discover blog routes after content generation
+      const blogRoutes = await discoverBlogRoutes()
+      nitroConfig.prerender = nitroConfig.prerender || {}
+      nitroConfig.prerender.routes = nitroConfig.prerender.routes || []
+      
+      // Add blog routes to prerender
+      const routesToAdd = ['/blog', ...blogRoutes]
+      for (const route of routesToAdd) {
+        if (!nitroConfig.prerender.routes.includes(route)) {
+          nitroConfig.prerender.routes.push(route)
+        }
+      }
+      
+      console.log(`[blog-static-generation] Registered ${blogRoutes.length} blog routes for static generation`)
+    }
+  },
+
+  // nitro configuration for static generation
+  nitro: {
+    prerender: {
+      routes: []
+    }
   },
 
   imports: {

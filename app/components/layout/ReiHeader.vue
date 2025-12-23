@@ -21,6 +21,7 @@ const emit = defineEmits<{
         <slot name="navigation">
           <NuxtLink to="/" class="nav-link">Home</NuxtLink>
           <NuxtLink to="/demo/material" class="nav-link">Demo</NuxtLink>
+          <NuxtLink to="/blog" class="nav-link">Blog</NuxtLink>
         </slot>
       </div>
 

@@ -3,7 +3,7 @@ title: 已追番
 date: 2025-08-12
 description: 已追番
 tags: [my,like,acgn,acg]
-cover: /cover/acg-mark.jpg
+cover: /_content/logo.png
 ---
 
 ## 追番

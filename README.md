@@ -11,6 +11,10 @@ Arishi Rei's Blog
 > - [快速开始](./docs/guide/getting-started.md)
 > - [组件库指南](./docs/components/rei-components.md)
 > - [架构设计](./docs/architecture/tech-stack.md)
+> - **[博客静态生成实现](./docs/specs/blog-static-generation-implementation-summary.md)** - 最新完成的重要架构改进
+
+> [!TIP] **最新更新 (2024-12-24)**
+> 🎉 **博客静态生成系统已完成**: 成功实现了完整的博客静态生成功能，支持 `pnpm generate` 生成纯静态站点，包含完整的 SEO 优化和性能提升。详见 [实现总结文档](./docs/specs/blog-static-generation-implementation-summary.md)。
 
 ## 架构图
 
